@@ -4,22 +4,14 @@ import React from 'react';
 import { COMPETITOR_BENCHMARK } from '@/data/mockData';
 import { 
   FileText, 
-  Download, 
   CheckCircle2, 
   ShieldCheck, 
   Layers, 
-  TrendingUp, 
   Users, 
-  Cpu, 
-  ExternalLink,
-  Code2
+  Cpu
 } from 'lucide-react';
 
-interface PRDViewerProps {
-  onOpenLatex: () => void;
-}
-
-export const PRDViewer: React.FC<PRDViewerProps> = ({ onOpenLatex }) => {
+export const PRDViewer: React.FC = () => {
   return (
     <div className="space-y-10 pb-20 max-w-5xl mx-auto">
       {/* PRD Header */}
@@ -28,7 +20,7 @@ export const PRDViewer: React.FC<PRDViewerProps> = ({ onOpenLatex }) => {
           <div>
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider mb-2">
               <FileText className="h-4 w-4" />
-              <span>Technical Product Requirements Document (PRD) &bull; Project 86</span>
+              <span>Product Architecture & Specifications &bull; Operational PRD</span>
             </div>
             <h1 className="text-3xl font-extrabold text-white tracking-tight">
               CampNexus: Pop-Up Summer Camp Operating System
@@ -38,41 +30,29 @@ export const PRDViewer: React.FC<PRDViewerProps> = ({ onOpenLatex }) => {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <a
-              href="/CampNexus_PRD_Technical_Report.pdf"
-              download
-              className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-900/30 flex items-center space-x-1.5 transition-all"
-            >
-              <Download className="h-4 w-4" />
-              <span>Download Formal PDF</span>
-            </a>
-            <button
-              onClick={onOpenLatex}
-              className="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-xs font-semibold flex items-center space-x-1.5"
-            >
-              <Code2 className="h-4 w-4 text-amber-400" />
-              <span>View LaTeX Source</span>
-            </button>
+          <div className="flex items-center space-x-2">
+            <span className="text-xs font-mono bg-emerald-950 text-emerald-300 border border-emerald-800 px-3 py-1.5 rounded-lg">
+              Status: Production Ready
+            </span>
           </div>
         </div>
 
         {/* Metadata Table */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-300">
           <div>
-            <span className="text-slate-500 block uppercase font-bold text-[10px]">Author</span>
-            <span className="font-semibold text-white">Gundeti Siddarth</span>
-            <span className="block text-[11px] text-slate-400">Head of Technology / Founding Tech Lead</span>
+            <span className="text-slate-500 block uppercase font-bold text-[10px]">Architecture Group</span>
+            <span className="font-semibold text-white">Product Engineering Team</span>
+            <span className="block text-[11px] text-slate-400">Core Systems Architecture</span>
           </div>
           <div>
-            <span className="text-slate-500 block uppercase font-bold text-[10px]">Target Venture</span>
-            <span className="font-semibold text-white">Ricoz Innovation</span>
-            <span className="block text-[11px] text-slate-400">Internship Project Selection</span>
+            <span className="text-slate-500 block uppercase font-bold text-[10px]">Operating Model</span>
+            <span className="font-semibold text-white">K-12 Campus Arbitrage</span>
+            <span className="block text-[11px] text-slate-400">8-Week Summer Leases</span>
           </div>
           <div>
-            <span className="text-slate-500 block uppercase font-bold text-[10px]">Date of Publication</span>
-            <span className="font-semibold text-white">November 15, 2026</span>
-            <span className="block text-[11px] text-slate-400">Version 1.0 (Production Blueprint)</span>
+            <span className="text-slate-500 block uppercase font-bold text-[10px]">System Release</span>
+            <span className="font-semibold text-white">Version 2.4</span>
+            <span className="block text-[11px] text-slate-400">Multi-Campus Deployment</span>
           </div>
           <div>
             <span className="text-slate-500 block uppercase font-bold text-[10px]">Architecture Stack</span>
@@ -97,7 +77,7 @@ export const PRDViewer: React.FC<PRDViewerProps> = ({ onOpenLatex }) => {
           costs continue to accrue.
         </p>
         <p className="text-xs text-slate-700 leading-relaxed">
-          Simultaneously, working parents face an acute summer childcare and enrichment crunch. Existing traditional 
+          Simultaneously, working parents face an annual summer childcare and enrichment crunch. Existing traditional 
           summer camps suffer from three critical deficiencies: (1) high real estate acquisition debt that forces tuition 
           above $800–$1,200/week (e.g., dedicated camp campuses or elite university programs), (2) single-dimension 
           curricula (only coding or only sports) that fail to satisfy families with diverse child interests, or 
@@ -230,7 +210,7 @@ export const PRDViewer: React.FC<PRDViewerProps> = ({ onOpenLatex }) => {
               <li>&bull; <strong>Language:</strong> TypeScript (Strict type safety across domain models)</li>
               <li>&bull; <strong>Design System:</strong> Tailwind CSS with custom branding tokens and print media styles</li>
               <li>&bull; <strong>Iconography:</strong> Lucide React for consistent semantic visual hierarchy</li>
-              <li>&bull; <strong>Deployment:</strong> Vercel edge deployment with global CDN asset optimization</li>
+              <li>&bull; <strong>Architecture:</strong> Component-driven modular design pattern</li>
             </ul>
           </div>
 

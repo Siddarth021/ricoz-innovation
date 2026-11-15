@@ -8,25 +8,23 @@ import {
   BookOpen, 
   TrendingUp, 
   FileText, 
-  Download, 
-  Sparkles,
-  Layers
+  Layers,
+  PhoneCall
 } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd';
   setActiveTab: (tab: 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd') => void;
-  onOpenLatex: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenLatex }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    { id: 'parent', label: 'Parent Discovery & Booking', icon: Users, badge: 'Ages 6-15' },
+    { id: 'parent', label: 'Parent Booking & Discovery', icon: Users, badge: 'Ages 6-15' },
     { id: 'school', label: 'School Partner Portal', icon: Building2, badge: '$40k+ Rev' },
     { id: 'director', label: 'Daily Ops Command Center', icon: ShieldCheck, badge: 'Live Ratios' },
     { id: 'curriculum', label: 'Curricula & Logistics', icon: BookOpen, badge: '3 Tracks' },
     { id: 'economics', label: 'Unit Economics Model', icon: TrendingUp, badge: 'P&L Engine' },
-    { id: 'prd', label: 'Executive PRD & Teardown', icon: FileText, badge: 'Technical' },
+    { id: 'prd', label: 'Product Architecture & PRD', icon: FileText, badge: 'Specs' },
   ] as const;
 
   return (
@@ -43,49 +41,27 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenL
               <div className="flex items-center space-x-2">
                 <span className="font-bold text-lg tracking-tight text-white">CampNexus</span>
                 <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                  Ricoz Innovation
+                  Campus Operator OS
                 </span>
               </div>
               <p className="text-xs text-slate-400 hidden sm:block">
-                Pop-Up Summer Camp Operating System &bull; K-12 Campus Arbitrage
+                Pop-Up Summer Day Camps on Leased K-12 School Campuses
               </p>
             </div>
           </div>
 
-          {/* Action buttons */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <a 
-              href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSiddarth021%2Fricoz-innovation.git"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-1 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-white hover:bg-slate-100 text-slate-900 transition-all shadow-sm"
-              title="Deploy to Vercel in 1 click"
-            >
-              <svg className="h-3 w-3 fill-current" viewBox="0 0 24 24">
-                <path d="M24 22.525H0l12-21.05 12 21.05z"/>
-              </svg>
-              <span className="hidden sm:inline">Deploy to Vercel</span>
-            </a>
-
-            <a 
-              href="/CampNexus_PRD_Technical_Report.pdf" 
-              download
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md shadow-emerald-900/30"
-              title="Download LaTeX-Compiled Formal Technical Report"
-            >
-              <Download className="h-3.5 w-3.5" />
-              <span className="hidden md:inline">Download Report (PDF)</span>
-              <span className="md:hidden">PDF</span>
-            </a>
+          {/* Quick Contact & Action */}
+          <div className="flex items-center space-x-3">
+            <div className="hidden md:flex items-center space-x-1.5 text-xs text-slate-300 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+              <PhoneCall className="h-3.5 w-3.5 text-emerald-400" />
+              <span>Campus Hotline: <strong>(800) 582-CAMP</strong></span>
+            </div>
 
             <button
-              onClick={onOpenLatex}
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all"
-              title="View & Copy Overleaf LaTeX Code"
+              onClick={() => setActiveTab('parent')}
+              className="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md shadow-emerald-900/30"
             >
-              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-              <span className="hidden sm:inline">Overleaf LaTeX</span>
-              <span className="sm:hidden">LaTeX</span>
+              Enroll Campers
             </button>
           </div>
         </div>

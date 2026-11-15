@@ -1,125 +1,80 @@
 # CampNexus — Pop-Up Summer Camp Operating System
-> **Ricoz Innovation Technical Assessment**  
-> **Topic 86:** Pop-Up Summer Camp Operator — *Rents underutilized school campuses during summer months to run multi-sport, theater, and robotics day camps.*  
-> **Author:** Gundeti Siddarth (CSE, Indian Institute of Information Technology, Sri City)  
-> **Role:** Head of Technology / Founding Tech Lead  
-> **GitHub Repository:** [https://github.com/Siddarth021/ricoz-innovation.git](https://github.com/Siddarth021/ricoz-innovation.git)
+
+> **Turnkey Operational Platform for Operating Multi-Sport, Theater, and Robotics Day Camps on Underutilized School Campuses.**
 
 ---
 
-## 1. Executive Summary & Strategic Rationale
+## 1. Overview
 
-K-12 schools represent one of the largest concentrations of underutilized physical capital in modern society. A typical suburban school campus—spanning 8 to 25 acres with air-conditioned gymnasiums, 350+ seat auditoriums, regulation athletic fields, and high-speed computer labs—represents **$15M to $45M in capital investment**, yet sits **dark and idle for 10 consecutive weeks each summer**.
+**CampNexus** is a full-stack operational platform designed to lease underutilized K-12 school campuses during summer downtime (June through August) and operate high-density, multi-track summer day camps.
 
-**CampNexus** unlocks this municipal asset arbitrage by operating turnkey, pop-up summer day camps on partner school grounds across three high-demand tracks:
-1. **Multi-Sport Athletic Academy** (Soccer, Basketball, Agility Ladders, Track & Field, Olympic Games)
-2. **Creative Arts & Musical Theater Workshop** (Stage Acting, Improv, Vocal Coaching, Broadway Gala)
+Modern school campuses represent millions in capital investment with athletic fields, air-conditioned gymnasiums, 350+ seat auditoriums, and high-speed computer labs that sit dark for 10 weeks every year. CampNexus monetizes this idle capacity by running three simultaneous enrichment tracks on a single neighborhood campus:
+
+1. **Multi-Sport Athletic Academy** (Soccer, Basketball, Agility Drills, Track & Field, Olympic Day)
+2. **Creative Arts & Musical Theater Workshop** (Stage Acting, Improv, Vocal Coaching, Broadway Gala Showcase)
 3. **Robotics, AI & Applied STEM Labs** (LEGO Spike Prime, BBC Micro:bit Sensors, Autonomous Rovers, Python Logic)
 
-### Key Value Propositions:
-- **For Schools:** Generates **$35,000 to $75,000** in net auxiliary revenue during summer downtime with **zero administrative overhead**, full indemnification (**$5,000,000 liability COI**), dedicated custodial crews, and donated equity scholarships for district students.
-- **For Parents:** Solves the multi-child summer logistics dilemma with an accessible price point (**$425–$495/week**), automatic **15% sibling discount**, early/late care (7:30 AM–6:00 PM), and digital peace of mind.
-- **For Site Directors:** Replaces chaotic paper clipboards with a high-velocity command center: **4-digit guardian release PIN verification**, live **counselor ratio compliance monitors**, and real-time medical alert tracking.
+---
+
+## 2. Core Value Propositions
+
+- **For Schools:** Yields **$35,000 to $75,000** in net auxiliary revenue during summer downtime with **zero administrative overhead**, full indemnification (**$5,000,000 liability policy**), dedicated evening custodial crews, and donated equity scholarships for district students.
+- **For Parents:** Delivers high-quality neighborhood day camps at **$425–$495/week**, an automated **15% sibling discount**, early/extended care (7:30 AM–6:00 PM), and digital peace of mind.
+- **For Operators:** Solves paper clipboard friction through a digital command center featuring **4-digit guardian PIN dismissal**, **real-time counselor-to-camper ratio monitors**, and serialized **Camp-in-a-Box** equipment dispatch.
 
 ---
 
-## 2. Competitive Market Teardown
+## 3. Platform Subsystems
 
-Before building, we explored and benchmarked the primary commercial competitors operating seasonal camp models:
+### 1. Parent Discovery & Booking Portal
+- Interactive school campus explorer with amenities filter (Gymnasiums, Turf Fields, Theaters, STEM Labs).
+- Track customizer across Multi-Sport, Musical Theater, and Robotics with 5-day syllabi previews.
+- Multi-week enrollment builder with early drop-off (7:30 AM) and extended care (6:00 PM).
+- Automated 15% sibling discount calculator.
+- Comprehensive medical/allergy intake with instant EpiPen and asthma alerts.
+- Cryptographically safe 4-digit guardian release PIN generation.
+- Instant simulated checkout generating a printable **Digital Camper Boarding Pass** with QR code.
 
-| Provider | Operational Model | Weekly Tuition | Curricular Focus | Key Vulnerability / Market Gap |
-| :--- | :--- | :--- | :--- | :--- |
-| **Camp Galileo** | Leased school pop-up | $540–$620 | STEAM design thinking projects | Rigid single-subject format; high certified-teacher payroll; zero athletics. |
-| **Steve & Kate’s** | Free-choice school tenant | $525 (or $115/day) | Self-directed maker, cooking, sports | Unstructured format causes parent churn as kids mature and seek coaching. |
-| **KidzToPros** | Contracted district operator | $395–$475 | STEM, Sports, and Digital Arts | Rapid multi-state scaling led to severe kit shortages and staff turnover. |
-| **iD Tech** | University computer lab lease | $999–$1,499 | Pure coding, game dev, AI robotics | Luxury pricing locks out middle class; heavy university rental overhead. |
-| **CampNexus (Ours)** | Turnkey K-12 pop-up OS | $425–$495 | Multi-Sport, Theater, Robotics | Standardized Camp-in-a-Box logistics & automated ratio guardrails. |
+### 2. School Campus Partner Hub
+- Interactive Summer Revenue Calculator computing $35k–$75k net payouts based on leased facilities.
+- Facility zone allocation manager (Gymnasium, Turf Field, Auditorium, Computer Labs).
+- Complete $5,000,000 liability COI verification and custodial reimbursement protocols.
+- 1-click **Master Campus Lease Agreement Generator** with legal terms and printable proposal.
 
----
+### 3. Daily Operations Command Center
+- Real-time morning check-in and afternoon dismissal roster with search and filter.
+- **4-Digit Guardian PIN Verification Handshake Modal** ensuring authorized guardian pickup.
+- **Counselor Ratio Safety Guard:** Real-time calculation of active campers per counselor (flags when approaching 1:10 limits).
+- Medical & allergy alert bar highlighting urgent medication notes.
+- Real-time incident logger with automated parent SMS notifications.
 
-## 3. Financial Unit Economics & Mathematical Formulation
+### 4. Curricula & Logistics Hub
+- Complete 5-day educational progression plans for Multi-Sport, Theater, and Robotics.
+- Serialized **Camp-in-a-Box** inventory tracking for 7 specialized hardware and safety trunks.
 
-The operational feasibility of each campus is governed by a contribution margin model where break-even is achieved at modest facility capacity utilization:
-
-### Break-Even Enrollment ($N^*$) Formula:
-$$N^* = \frac{C_{\text{lease}} + C_{\text{dir}}}{P - \left( \frac{w \times H}{1/r} + c_{\text{mat}} + \alpha P \right)}$$
-
-Where:
-- $P = \$450$ (Average weekly tuition per camper)
-- $C_{\text{lease}} = \$4,500$ (Weekly school campus lease)
-- $C_{\text{dir}} = \$1,400$ (Weekly site director salary)
-- $w = \$22$/hr (Counselor hourly wage, $H = 40$ hrs/week)
-- $r = 1/9$ (Counselor-to-camper ratio)
-- $c_{\text{mat}} = \$32$ (Consumable supplies and kit amortization)
-- $\alpha = 0.045$ (Merchant processing 3% + commercial liability 1.5%)
-
-$$N^* = \frac{4500 + 1400}{450 - (97.78 + 32.00 + 20.25)} = \frac{5900}{300.00} \approx \mathbf{40.7\text{ campers/week}}$$
-
-- **Break-even is reached at just 41 campers/week** (~28% of campus capacity).
-- At **target baseline (120 campers/week)**, each campus delivers **$30,100 weekly net contribution (55.7% margin)**, totaling **$240,800 per campus over an 8-week summer**.
+### 5. Unit Economics Modeler
+- Real-time parametric sliders for tuition, school lease, wages, ratios, and campus scaling.
+- Live campus P&L statement, break-even sensitivity analysis, and multi-campus portfolio forecasts.
 
 ---
 
-## 4. Software Architecture & Core Subsystems
+## 4. Tech Stack
 
-Built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**:
-
-1. **Parent Discovery & Booking Portal:**
-   - Interactive campus search with real facility attributes (Gymnasiums, Turf Fields, Theaters, STEM Labs).
-   - Track customizer with 5-day daily schedules and age filters.
-   - Multi-week enrollment builder with early care (7:30 AM) and extended care (6:00 PM).
-   - Automated 15% sibling discount calculator.
-   - Comprehensive medical/allergy intake with instant EpiPen/asthma alerts.
-   - 4-digit pickup PIN release assignment.
-   - Printable / downloadable **Digital Camper Boarding Pass** with QR code.
-
-2. **School Campus Partner Hub:**
-   - Interactive facility leasing revenue calculator (calculates $35k–$75k guaranteed school earnings).
-   - Facility zone allocation manager (Gymnasium, Turf Field, Auditorium, Computer Labs).
-   - Institutional safety assurance ($5M COI, background checks, dedicated custodial funding).
-   - 1-click **Master Campus Lease Agreement Generator** with downloadable contract.
-
-3. **Daily Operations Command Center:**
-   - Real-time morning check-in & afternoon dismissal roster with search and filter.
-   - **4-Digit Guardian PIN Verification Handshake** modal for secure child release.
-   - **Counselor Ratio Safety Guard:** Real-time ratio tracking per track (alerts if approaching 1:10 threshold).
-   - Medical & allergy alert bar (highlighting urgent dietary and medication notes).
-   - Incident & triage logger with automatic parent SMS notification flag.
-
-4. **Curricula & Logistics Hub:**
-   - Full day-by-day lesson roadmaps for Multi-Sport, Theater, and Robotics.
-   - Serialized **Camp-in-a-Box** dispatch registry (Kit IDs, quantities, SKUs, and delivery verification).
-
-5. **Unit Economics Modeler:**
-   - Real-time parametric sliders for tuition, school lease, wages, and ratios.
-   - Live campus P&L statement, break-even sensitivity analysis, and multi-campus portfolio scaling.
-
-6. **Executive PRD & Technical Report Viewer:**
-   - Full Product Requirements Document with downloadable LaTeX-compiled PDF report (`CampNexus_PRD_Technical_Report.pdf`).
-   - Overleaf LaTeX source viewer and 1-click copy for compilation on Overleaf.
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Celebration Effects:** Canvas Confetti
 
 ---
 
-## 5. LaTeX Report & Academic Formatting
+## 5. Getting Started
 
-To match the typography and rigorous structure of formal engineering reports (`overleaf_upload (1).pdf`):
-- Typeset in **Computer Modern / Latin Modern serif** using `pdflatex`.
-- Features formal title page, table of contents, booktabs data tables, LaTeX mathematical equations, and academic citations.
-- Pre-compiled PDF available at `public/CampNexus_PRD_Technical_Report.pdf`.
-- Complete Overleaf bundle available at `public/CampNexus_Overleaf_LaTeX_Project.zip` and `report/main.tex`.
+### Prerequisites
+- Node.js 18.17+ or 20+
+- npm or yarn
 
----
-
-## 6. Local Development & 1-Click Vercel Deployment
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSiddarth021%2Fricoz-innovation.git)
-
-### 1-Click Cloud Deployment:
-Click the badge above or navigate to:  
-👉 **[Deploy CampNexus on Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSiddarth021%2Fricoz-innovation.git)**  
-Vercel will clone the repository, run `npm install`, compile the Next.js static and dynamic assets via its global edge CDN, and issue a live production URL (e.g. `https://ricoz-innovation.vercel.app`).
-
-### Local Development:
+### Installation
 ```bash
 # Clone the repository
 git clone https://github.com/Siddarth021/ricoz-innovation.git
@@ -135,12 +90,9 @@ npm run dev
 npm run build
 ```
 
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
 ---
 
-## 7. Author Information
-
-- **Name:** Gundeti Siddarth
-- **Degree / Branch:** Computer Science & Engineering (CSE)
-- **Institution:** Indian Institute of Information Technology, Sri City
-- **Role:** Head of Technology / Founding Tech Lead (Ricoz Innovation Internship Assessment)
-- **Date:** November 15, 2026
+## 6. License
+Proprietary and confidential. Developed for CampNexus Platform.
