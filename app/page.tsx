@@ -9,18 +9,19 @@ import { OperationsDashboard } from '@/components/OperationsDashboard';
 import { CurriculumHub } from '@/components/CurriculumHub';
 import { EconomicsSimulator } from '@/components/EconomicsSimulator';
 import { PRDViewer } from '@/components/PRDViewer';
+import { PitchDeck } from '@/components/PitchDeck';
 import { 
   Trophy, 
   Sparkles, 
   Bot, 
   ShieldCheck, 
-  CheckCircle2,
-  Lock,
-  HeartHandshake
+  CheckCircle2, 
+  Lock, 
+  HeartHandshake 
 } from 'lucide-react';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'home' | 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd' | 'deck'>('home');
   const [preSelectedTrack, setPreSelectedTrack] = useState<'multi-sport' | 'theater' | 'robotics'>('robotics');
 
   const handleSelectTrack = (trackId: 'multi-sport' | 'theater' | 'robotics') => {
@@ -46,6 +47,7 @@ export default function Home() {
           />
         )}
         
+        {activeTab === 'deck' && <PitchDeck />}
         {activeTab === 'parent' && <ParentPortal />}
         {activeTab === 'school' && <SchoolPartnerPortal />}
         {activeTab === 'director' && <OperationsDashboard />}
@@ -100,37 +102,53 @@ export default function Home() {
                 </li>
                 <li className="flex items-center space-x-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-[#2D5A27]" />
-                  <span>Title 1 Community Student Scholarships</span>
+                  <span>$5,000,000 Master General Liability Policy</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-white font-serif uppercase tracking-widest text-[11px] mb-3">Safety & Governance</h4>
+              <h4 className="text-white font-serif uppercase tracking-widest text-[11px] mb-3">Safety & Trust</h4>
               <ul className="space-y-2 text-[#D6CEBE]">
                 <li className="flex items-center space-x-1.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#2D5A27]" />
-                  <span>$5,000,000 Aggregate Liability COI</span>
+                  <span>Strict 1:8 Counselor-to-Camper Ratio</span>
                 </li>
                 <li className="flex items-center space-x-1.5">
                   <Lock className="h-3.5 w-3.5 text-[#2D5A27]" />
-                  <span>4-Digit Guardian PIN Dismissal</span>
+                  <span>Two-Factor Rolling 4-Digit Pickup PIN</span>
                 </li>
                 <li className="flex items-center space-x-1.5">
                   <HeartHandshake className="h-3.5 w-3.5 text-[#2D5A27]" />
-                  <span>1:8 Staff Supervision Ratios (ACA)</span>
+                  <span>100% CPR/First Aid & Background Checks</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[#292524] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#78716C]">
-            <span>&copy; 2026 CampNexus Platform. All rights reserved.</span>
-            <div className="flex space-x-6 text-[#A8A29E]">
-              <button onClick={() => setActiveTab('parent')} className="hover:text-white transition-colors">Parent Booking</button>
-              <button onClick={() => setActiveTab('school')} className="hover:text-white transition-colors">School Partnerships</button>
-              <button onClick={() => setActiveTab('director')} className="hover:text-white transition-colors">Director Dashboard</button>
-              <button onClick={() => setActiveTab('prd')} className="hover:text-white transition-colors">Technical PRD</button>
+          <div className="pt-8 border-t border-[#292524] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#78716C] gap-4">
+            <div>
+              &copy; 2026 CampNexus Platform Architecture. All rights reserved. Topic 86: Pop-Up Summer Camp Operator.
+            </div>
+            <div className="flex items-center space-x-6 text-[#A8A29E]">
+              <button onClick={() => setActiveTab('deck')} className="hover:text-white transition-colors">
+                12-Page Deck
+              </button>
+              <a href="/CampNexus_12_Page_Business_Deck.pdf" download className="hover:text-white transition-colors">
+                Deck (PDF)
+              </a>
+              <a href="/CampNexus_PRD_Technical_Report.pdf" download className="hover:text-white transition-colors">
+                Report (PDF)
+              </a>
+              <button onClick={() => setActiveTab('parent')} className="hover:text-white transition-colors">
+                Parent Booking
+              </button>
+              <button onClick={() => setActiveTab('school')} className="hover:text-white transition-colors">
+                Schools
+              </button>
+              <button onClick={() => setActiveTab('director')} className="hover:text-white transition-colors">
+                Live Ops
+              </button>
             </div>
           </div>
         </div>

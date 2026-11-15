@@ -11,12 +11,13 @@ import {
   Layers,
   PhoneCall,
   Download,
-  Calendar
+  Calendar,
+  Presentation
 } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: 'home' | 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd';
-  setActiveTab: (tab: 'home' | 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd') => void;
+  activeTab: 'home' | 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd' | 'deck';
+  setActiveTab: (tab: 'home' | 'parent' | 'school' | 'director' | 'curriculum' | 'economics' | 'prd' | 'deck') => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
@@ -46,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           </div>
 
           {/* Center Navigation Links (Clean & Editorial) */}
-          <nav className="hidden md:flex items-center space-x-6 text-xs uppercase tracking-widest font-medium text-[#57534E]">
+          <nav className="hidden md:flex items-center space-x-5 text-xs uppercase tracking-widest font-medium text-[#57534E]">
             <button
               onClick={() => setActiveTab('home')}
               className={`transition-colors py-2 border-b-2 ${
@@ -56,6 +57,18 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
               }`}
             >
               Overview
+            </button>
+
+            <button
+              onClick={() => setActiveTab('deck')}
+              className={`transition-colors py-2 border-b-2 flex items-center space-x-1 ${
+                activeTab === 'deck'
+                  ? 'border-emerald-600 text-emerald-800 font-bold'
+                  : 'border-transparent text-emerald-700 hover:text-emerald-900 font-semibold'
+              }`}
+            >
+              <Presentation className="h-3.5 w-3.5" />
+              <span>12-Page Deck</span>
             </button>
 
             <button
@@ -115,7 +128,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-2.5">
+            <a
+              href="/CampNexus_12_Page_Business_Deck.pdf"
+              download
+              className="hidden lg:inline-flex items-center space-x-1.5 px-3 py-2 text-xs font-bold rounded-sm bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 transition-all shadow-2xs"
+              title="Download 12-Page Business Pitch Deck (PDF)"
+            >
+              <Download className="h-3.5 w-3.5 text-emerald-700" />
+              <span>12-Page Deck (PDF)</span>
+            </a>
+
             <a
               href="/CampNexus_PRD_Technical_Report.pdf"
               download
@@ -138,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
 
         {/* Mobile Navigation Bar */}
         <div className="flex md:hidden space-x-2 overflow-x-auto py-2.5 no-scrollbar border-t border-[#E7E2DA]">
-          {(['home', 'parent', 'school', 'curriculum', 'director', 'prd'] as const).map((tab) => (
+          {(['home', 'deck', 'parent', 'school', 'curriculum', 'director', 'prd'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -148,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   : 'bg-white text-[#57534E] border border-[#E7E2DA]'
               }`}
             >
-              {tab === 'home' ? 'Overview' : tab === 'parent' ? 'Booking' : tab === 'school' ? 'Schools' : tab === 'director' ? 'Ops' : tab}
+              {tab === 'home' ? 'Overview' : tab === 'deck' ? '12-Page Deck' : tab === 'parent' ? 'Booking' : tab === 'school' ? 'Schools' : tab === 'director' ? 'Ops' : tab}
             </button>
           ))}
         </div>
