@@ -1,6 +1,6 @@
-\documentclass[aspectratio=169,10pt]{beamer}
+\documentclass[aspectratio=169,9pt]{beamer}
 
-% Encoding and typography
+% Typography and encoding
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -10,78 +10,76 @@
 \usepackage{colortbl}
 \usepackage{tikz}
 \usepackage{tcolorbox}
-\tcbuselibrary{skins,breakable}
+\tcbuselibrary{skins}
 
-% Beamer clean custom theme setup
+% Clean beamer setup
 \usetheme{default}
 \usefonttheme{professionalfonts}
 \setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=14pt, text margin right=14pt}
 
-% Color Palette (Deep Emerald, Navy, Warm Slate, Accent Amber)
-\definecolor{cnGreen}{RGB}{6, 78, 59}          % Deep Forest Emerald #064E3B
-\definecolor{cnEmerald}{RGB}{16, 185, 129}     % Vibrant Emerald
-\definecolor{cnLightGreen}{RGB}{236, 253, 245} % Mint background #ECFDF5
-\definecolor{cnNavy}{RGB}{15, 23, 42}          % Dark Slate / Navy #0F172A
-\definecolor{cnSlate}{RGB}{71, 85, 105}        % Muted Slate #475569
-\definecolor{cnAmber}{RGB}{217, 119, 6}        % Warm Amber #D97706
-\definecolor{cnLightAmber}{RGB}{255, 251, 235}
-\definecolor{cnBlue}{RGB}{37, 99, 235}         % Cobalt Blue #2563EB
-\definecolor{cnLightBlue}{RGB}{239, 246, 255}
-\definecolor{cnBg}{RGB}{250, 248, 245}         % Editorial Cream #FAF8F5
-\definecolor{cnBorder}{RGB}{226, 232, 240}
+% Executive Color Palette
+\definecolor{brandNavy}{RGB}{15, 23, 42}        % #0F172A (Deep Slate Navy)
+\definecolor{brandEmerald}{RGB}{6, 95, 70}      % #065F46 (Forest Emerald)
+\definecolor{brandGreenAccent}{RGB}{16, 185, 129}% #10B981 (Vibrant Emerald)
+\definecolor{brandSlate}{RGB}{71, 85, 105}      % #475569 (Muted Slate)
+\definecolor{brandAmber}{RGB}{217, 119, 6}      % #D97706 (Warm Amber)
+\definecolor{brandBlue}{RGB}{37, 99, 235}       % #2563EB (Royal Blue)
+\definecolor{cardBg}{RGB}{255, 255, 255}        % Clean White
+\definecolor{stageBg}{RGB}{250, 250, 250}       % #FAFAFA
+\definecolor{lineBorder}{RGB}{226, 232, 240}    % #E2E8F0
+\definecolor{mintLight}{RGB}{236, 253, 245}     % #ECFDF5
+\definecolor{amberLight}{RGB}{254, 243, 199}    % #FEF3C7
+\definecolor{blueLight}{RGB}{239, 246, 255}     % #EFF6FF
 
-% Global slide background
-\setbeamercolor{background canvas}{bg=cnBg}
+\setbeamercolor{background canvas}{bg=stageBg}
 
-% Custom Headline and Footline
+% Compact Headline
 \setbeamertemplate{headline}{%
-  \vskip5pt%
-  \leavevmode%
-  \hskip16pt%
-  \textcolor{cnGreen}{\textbf{\scriptsize CAMPNEXUS}}%
-  \hskip6pt\textcolor{cnSlate}{\scriptsize $|$}%
-  \hskip6pt\textcolor{cnSlate}{\scriptsize POP-UP SUMMER CAMP OPERATOR}%
-  \hfill%
-  \textcolor{cnAmber}{\textbf{\scriptsize CONFIDENTIAL BUSINESS DECK}}%
-  \hskip16pt%
   \vskip3pt%
-  \hskip16pt\textcolor{cnBorder}{\rule{\dimexpr\paperwidth-32pt\relax}{0.5pt}}\hskip16pt%
+  \leavevmode\hskip14pt%
+  \textcolor{brandEmerald}{\textbf{\scriptsize CAMPNEXUS}}%
+  \hskip6pt\textcolor{brandSlate}{\tiny $|$}%
+  \hskip6pt\textcolor{brandSlate}{\tiny POP-UP SUMMER CAMP OPERATOR}%
+  \hfill%
+  \textcolor{brandAmber}{\textbf{\tiny EXECUTIVE STRATEGIC PITCH DECK}}%
+  \hskip14pt\vskip2pt%
+  \hskip14pt\textcolor{lineBorder}{\rule{\dimexpr\paperwidth-28pt\relax}{0.4pt}}\hskip14pt%
 }
 
+% Compact Footer
 \setbeamertemplate{footline}{%
   \vskip2pt%
-  \hskip16pt\textcolor{cnBorder}{\rule{\dimexpr\paperwidth-32pt\relax}{0.5pt}}\hskip16pt%
+  \hskip14pt\textcolor{lineBorder}{\rule{\dimexpr\paperwidth-28pt\relax}{0.4pt}}\hskip14pt%
   \vskip2pt%
-  \leavevmode%
-  \hskip16pt%
-  \textcolor{cnSlate}{\tiny Strategic Pitch Deck \& Operational Blueprint --- Summer 2026}%
+  \leavevmode\hskip14pt%
+  \textcolor{brandSlate}{\tiny Topic 86: Pop-Up Summer Camp Operator $\bullet$ Confidential Presentation}%
   \hfill%
-  \textcolor{cnNavy}{\textbf{\scriptsize Slide \insertframenumber{} of \inserttotalframenumber{}}}%
-  \hskip16pt%
-  \vskip5pt%
+  \textcolor{brandNavy}{\textbf{\scriptsize Slide \insertframenumber{} of 12}}%
+  \hskip14pt\vskip4pt%
 }
 
-% Custom slide title styling
+% Slide Title & Subtitle Styling
 \setbeamertemplate{frametitle}{%
-  \vskip3pt%
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=16pt,rightskip=16pt]{frametitle}
-    \usebeamerfont{frametitle}\textcolor{cnNavy}{\textbf{\large \insertframetitle}}\par%
+  \vskip1pt%
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=14pt,rightskip=14pt]{frametitle}
+    \usebeamerfont{frametitle}\textcolor{brandNavy}{\textbf{\normalsize \insertframetitle}}\par%
     \ifx\insertframesubtitle\@empty\else%
-      \vskip1pt%
-      \usebeamerfont{framesubtitle}\textcolor{cnGreen}{\textbf{\scriptsize \insertframesubtitle}}\par%
+      \vskip0.5pt%
+      \usebeamerfont{framesubtitle}\textcolor{brandEmerald}{\textbf{\tiny \insertframesubtitle}}\par%
     \fi%
   \end{beamercolorbox}
   \vskip-4pt%
 }
 
-% Card / Box helper
-\newtcolorbox{metricbox}[2][]{%
+% Compact Card Box Helper
+\newtcolorbox{execbox}[3][]{%
   enhanced,
   colback=#2,
-  colframe=cnBorder,
+  colframe=#3,
   boxrule=0.5pt,
   arc=3pt,
-  left=5pt,right=5pt,top=4pt,bottom=4pt,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,boxsep=0.5pt,
   #1
 }
 
@@ -92,407 +90,446 @@
 % ==============================================================================
 \begin{frame}[plain]
 \begin{tikzpicture}[remember picture,overlay]
-  \fill[cnNavy] (current page.north west) rectangle ([yshift=-1.1cm]current page.north east);
-  \fill[cnGreen] (current page.south west) rectangle ([yshift=0.4cm]current page.south east);
+  \fill[brandNavy] (current page.north west) rectangle ([yshift=-1.1cm]current page.north east);
+  \fill[brandEmerald] (current page.south west) rectangle ([yshift=0.35cm]current page.south east);
 \end{tikzpicture}
 
 \vskip-10pt
-\textcolor{white}{\textbf{\Large CAMPNEXUS}} \hfill \textcolor{cnEmerald}{\textbf{\scriptsize 12-PAGE STRATEGIC BUSINESS DECK}}
-\vskip16pt
+\textcolor{white}{\textbf{\normalsize CAMPNEXUS}} \hfill \textcolor{brandGreenAccent}{\textbf{\tiny 12-PAGE STRATEGIC PITCH DECK}}
+\vskip14pt
 
 \begin{center}
-  {\huge \textbf{\textcolor{cnNavy}{Unlocking Underutilized K--12 Campuses}}} \\[3pt]
-  {\Large \textbf{\textcolor{cnGreen}{The Asset-Light Pop-Up Summer Day Camp Operator}}} \\[5pt]
-  \textcolor{cnSlate}{\small Multi-Sport $\bullet$ Musical Theater $\bullet$ Applied Robotics on Local School Grounds}
+  {\Large \textbf{\textcolor{brandNavy}{Unlocking Underutilized K--12 School Campuses}}} \\[2pt]
+  {\normalsize \textbf{\textcolor{brandEmerald}{The Asset-Light Pop-Up Summer Day Camp Operator}}} \\[3pt]
+  \textcolor{brandSlate}{\scriptsize Multi-Sport $\bullet$ Musical Theater $\bullet$ Applied Robotics on Local School Grounds}
 \end{center}
 
-\vskip8pt
+\vskip6pt
 \begin{columns}[T]
-  \begin{column}{0.24\textwidth}
-    \begin{metricbox}{cnLightGreen}
+  \begin{column}{0.23\textwidth}
+    \begin{execbox}{mintLight}{brandEmerald}
       \centering
-      \textcolor{cnGreen}{\textbf{\LARGE \$4.2B}} \\[2pt]
-      \textcolor{cnNavy}{\textbf{\scriptsize US Day Camp TAM}} \\[1pt]
-      \tiny 14M K--8 campers annually
-    \end{metricbox}
+      \textcolor{brandEmerald}{\textbf{\Large \$4.2B}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\tiny US Day Camp TAM}} \\[1pt]
+      \tiny 14M K--8 Campers/Yr
+    \end{execbox}
   \end{column}
-  \begin{column}{0.24\textwidth}
-    \begin{metricbox}{cnLightBlue}
+  \begin{column}{0.23\textwidth}
+    \begin{execbox}{blueLight}{brandBlue}
       \centering
-      \textcolor{cnBlue}{\textbf{\LARGE \$0}} \\[2pt]
-      \textcolor{cnNavy}{\textbf{\scriptsize Real Estate Capex}} \\[1pt]
-      \tiny 100\% asset-light leaseback
-    \end{metricbox}
+      \textcolor{brandBlue}{\textbf{\Large \$0}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\tiny Real Estate Capex}} \\[1pt]
+      \tiny 100\% Leaseback Model
+    \end{execbox}
   \end{column}
-  \begin{column}{0.24\textwidth}
-    \begin{metricbox}{cnLightAmber}
+  \begin{column}{0.23\textwidth}
+    \begin{execbox}{amberLight}{brandAmber}
       \centering
-      \textcolor{cnAmber}{\textbf{\LARGE 39.3\%}} \\[2pt]
-      \textcolor{cnNavy}{\textbf{\scriptsize Campus EBITDA}} \\[1pt]
-      \tiny \$173.8k net per campus/yr
-    \end{metricbox}
+      \textcolor{brandAmber}{\textbf{\Large 39.3\%}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\tiny Campus EBITDA}} \\[1pt]
+      \tiny \$173.8k Net / Campus
+    \end{execbox}
   \end{column}
-  \begin{column}{0.24\textwidth}
-    \begin{metricbox}{white}
+  \begin{column}{0.23\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
       \centering
-      \textcolor{cnNavy}{\textbf{\LARGE 41}} \\[2pt]
-      \textcolor{cnNavy}{\textbf{\scriptsize Break-Even Volume}} \\[1pt]
-      \tiny Campers/wk (34\% capacity)
-    \end{metricbox}
+      \textcolor{brandNavy}{\textbf{\Large 41}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\tiny Break-Even Volume}} \\[1pt]
+      \tiny Campers/Wk (34\% Cap)
+    \end{execbox}
   \end{column}
 \end{columns}
 
-\vskip10pt
+\vskip8pt
 \begin{center}
-  \textcolor{cnSlate}{\scriptsize \textbf{Core Value Thesis:} Transforming vacant summer school facilities into high-margin enrichment hubs. Schools gain \$35k--\$75k in auxiliary revenue; parents gain premium, single-site, multi-interest enrichment within 10 minutes of home.}
+  \textcolor{brandSlate}{\scriptsize \textbf{Core Value Thesis:} Renting dark summer school facilities. Districts gain \$35k--\$75k auxiliary revenue with \$5M liability protection; parents gain neighborhood multi-interest care within 10 minutes of home.}
 \end{center}
-
-\vfill
-\textcolor{cnSlate}{\tiny Document Version 2.4 $\bullet$ Prepared for Leadership \& Team Workstreams $\bullet$ Strict Confidentiality}
 \end{frame}
 
 % ==============================================================================
 % SLIDE 2: Problem & Market Inefficiency
 % ==============================================================================
-\begin{frame}{The Problem \& Market Inefficiency}{STRUCTURAL FRICTION IN SUMMER REAL ESTATE AND WORKING PARENT CHILDCARE}
+\begin{frame}{The Core Problem: A Tri-Partite Inefficiency}{STRUCTURAL FRICTION IN MUNICIPAL REAL ESTATE, WORKING PARENT CHILDCARE \& LEARNING LOSS}
 
 \begin{columns}[T]
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textcolor{red!80!black}{\textbf{\footnotesize 1. 100k+ Dark Campuses}}]{white}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{red!80!black}{\textbf{\scriptsize 1. 100k+ Dark Campuses}} \\[2pt]
       \tiny
-      \textbf{The Facility Inefficiency:}
-      \begin{itemize}
-        \item Public/private K--12 schools operate 180 days/year.
-        \item Campuses sit completely idle for 10--12 summer weeks.
-        \item Districts carry ongoing overhead (HVAC, grounds, maintenance) while generating \textbf{\$0 auxiliary income}.
-        \item Community assets remain locked behind closed gates.
-      \end{itemize}
-    \end{metricbox}
+      K--12 schools operate 180 days/yr. Buildings sit idle for 10--12 weeks in summer.
+      \vskip2pt
+      Districts carry continuous HVAC, grounds, and security overhead with \textbf{\$0 auxiliary return}.
+    \end{execbox}
   \end{column}
 
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textcolor{cnAmber}{\textbf{\footnotesize 2. 70-Day Childcare Void}}]{white}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandAmber}{\textbf{\scriptsize 2. 70-Day Childcare Void}} \\[2pt]
       \tiny
-      \textbf{The Parent Crisis:}
-      \begin{itemize}
-        \item 68\% of target families have dual-working parents requiring full-day care.
-        \item Fragmented market: municipal daycares vs. \$1,200/wk elite sleepaway camps.
-        \item \textbf{Sibling Friction:} Families with children of differing interests face 2--3 separate morning drop-off locations across town.
-      \end{itemize}
-    \end{metricbox}
+      68\% of target families have dual-working parents needing full-day summer care.
+      \vskip2pt
+      \textbf{The Sibling Dilemma:} Differing child passions force parents into 2--3 separate morning drop-offs across town.
+    \end{execbox}
   \end{column}
 
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textcolor{cnBlue}{\textbf{\footnotesize 3. Severe "Summer Slide"}}]{white}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandBlue}{\textbf{\scriptsize 3. Severe "Summer Slide"}} \\[2pt]
       \tiny
-      \textbf{The Enrichment Deficit:}
-      \begin{itemize}
-        \item Students lose an average of \textbf{2.6 months} of grade-level math and reading competencies each summer.
-        \item Screen time increases by 250\% during vacation.
-        \item Sports day camps neglect STEM/arts; specialty STEM camps neglect physical movement.
-      \end{itemize}
-    \end{metricbox}
+      Students lose an average of \textbf{2.6 months} of grade-level math and reading competencies.
+      \vskip2pt
+      Sports camps ignore STEM; specialty tech camps lack outdoor athletics and exercise.
+    \end{execbox}
   \end{column}
 \end{columns}
 
-\vskip6pt
-\begin{metricbox}{cnLightGreen}
+\vskip4pt
+\begin{execbox}{mintLight}{brandEmerald}
   \scriptsize
   \textbf{The Market Disconnect:} Massive underutilized municipal physical assets sit idle directly adjacent to millions of working households desperate for localized, full-day, multi-disciplinary child enrichment.
-\end{metricbox}
+\end{execbox}
+
 \end{frame}
 
 % ==============================================================================
-% SLIDE 3: The CampNexus Solution
+% SLIDE 3: The Solution
 % ==============================================================================
-\begin{frame}{The CampNexus Solution}{THE TURNKEY POP-UP OPERATING MODEL: ZERO CAPEX, COMMUNITY ROOTED}
+\begin{frame}{The CampNexus Solution: Turnkey Pop-Up Operator}{ASSET-LIGHT CAMPUS LEASEBACK $\bullet$ 48-HOUR RAPID MOBILIZATION $\bullet$ TRI-TRACK HUBS}
 
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
-    \textbf{\textcolor{cnGreen}{\small 1. Asset-Light Campus Master Lease}}
-    \begin{itemize}\scriptsize
-      \item \textbf{Turnkey District Revenue:} Schools earn 15\% gross royalty (\$35,000--\$75,000 net) during summer shutdown without operational effort.
-      \item \textbf{Comprehensive Indemnification:} \$5,000,000 aggregate commercial general liability policy naming the district as Additional Insured.
-      \item \textbf{Custodial Guarantee:} Daily evening custodial turnaround guarantees zero wear-and-tear on school property.
-    \end{itemize}
-    
-    \vskip4pt
-    \textbf{\textcolor{cnBlue}{\small 2. Proprietary "Camp-in-a-Box" Logistics}}
-    \begin{itemize}\scriptsize
-      \item Serialized, heavy-duty mobile cargo containers pre-packed with complete athletic equipment, stage gear, and robotics hardware.
-      \item Rapid deployment: Campus setup executed in under \textbf{48 hours} prior to opening day; complete teardown in 24 hours.
-    \end{itemize}
+    \begin{execbox}{mintLight}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\scriptsize 1. Master Campus Leaseback}} \\[2pt]
+      \tiny
+      \begin{itemize}
+        \item \textbf{Guaranteed Payout:} Schools earn 15\% gross royalties (\$35k--\$75k net).
+        \item \textbf{Full Indemnification:} \$5,000,000 commercial general liability policy.
+        \item \textbf{Restorative Custodial:} Evening cleaning guarantees zero facility wear.
+      \end{itemize}
+    \end{execbox}
+
+    \vskip2pt
+    \begin{execbox}{blueLight}{brandBlue}
+      \textcolor{brandBlue}{\textbf{\scriptsize 2. "Camp-in-a-Box" Logistics}} \\[2pt]
+      \tiny
+      Serialized Pelican freight crates store sports gear, stage mics, and robotics kits. \textbf{Staging executed in under 48 hours}; 24-hr exit.
+    \end{execbox}
   \end{column}
 
   \begin{column}{0.48\textwidth}
-    \textbf{\textcolor{cnAmber}{\small 3. Three-Track Multi-Interest Curriculum}}
-    \begin{itemize}\scriptsize
-      \item \textbf{Multi-Sport Academy:} Soccer, basketball, flag football, and Olympic games.
-      \item \textbf{Musical Theater Workshop:} Improv, voice acting, and Friday stage gala.
-      \item \textbf{Robotics \& Applied STEM:} LEGO Spike, autonomous Micro:bit rovers, Python.
-    \end{itemize}
+    \begin{execbox}{amberLight}{brandAmber}
+      \textcolor{brandAmber}{\textbf{\scriptsize 3. Tri-Track Neighborhood Synergy}} \\[2pt]
+      \tiny
+      Multi-Sport, Musical Theater, and Robotics run concurrently on one campus.
+      \begin{itemize}
+        \item \textbf{Single-Site Drop-Off:} All siblings arrive at the same familiar school.
+        \item \textbf{15\% Sibling Discount:} Automatically applied at digital checkout.
+      \end{itemize}
+    \end{execbox}
 
-    \vskip4pt
-    \begin{metricbox}{cnLightBlue}
-      \textbf{\textcolor{cnNavy}{\footnotesize The Single-Campus Parent Advantage:}} \\[2pt]
-      \scriptsize Parents drop off all their children at one familiar neighborhood campus at 8:30 AM. Sibling A does competitive robotics, Sibling B plays basketball, and Sibling C rehearses a musical. Automatically applied \textbf{15\% sibling discount}.
-    \end{metricbox}
+    \vskip2pt
+    \begin{execbox}{cardBg}{brandNavy}
+      \textcolor{brandNavy}{\textbf{\scriptsize Operational Advantage}} \\[1pt]
+      \tiny
+      100\% asset-light. Zero debt financing. Pre-funded working capital float from spring enrollments.
+    \end{execbox}
   \end{column}
 \end{columns}
 
 \end{frame}
 
 % ==============================================================================
-% SLIDE 4: Market Size & Demographic Opportunity
+% SLIDE 4: Market Sizing
 % ==============================================================================
-\begin{frame}{Market Opportunity \& TAM / SAM / SOM}{A \$4.2B NON-DISCRETIONARY CHILDCARE AND ENRICHMENT MARKET}
+\begin{frame}{Market Opportunity: A \$4.2B Essential Care Industry}{HIGH DUAL-INCOME PENETRATION $\bullet$ PROXIMITY DRIVEN $\bullet$ DISTRICT FUNDING DEFICIT}
 
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}[title=\textcolor{cnNavy}{\textbf{\footnotesize Market Sizing Funnel (North America)}}]{white}
-      \small
-      \textbf{\textcolor{cnGreen}{TAM: \$4.20 Billion}} \\[1pt]
-      \scriptsize 14.0M US K--8 children enrolled in day camps annually. Average spend \$300--\$500/week for 4--6 summer weeks. \\[4pt]
-      
-      \textbf{\textcolor{cnBlue}{SAM: \$1.12 Billion}} \\[1pt]
-      \scriptsize Top 50 metropolitan suburban school districts with dual-income household median income >\$120,000. \\[4pt]
-      
-      \textbf{\textcolor{cnAmber}{SOM: \$48.0 Million (5-Year Target)}} \\[1pt]
-      \scriptsize 100 partner school campuses across 4 core metropolitan regions operating at 80\% summer capacity.
-    \end{metricbox}
+    \begin{execbox}{mintLight}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\tiny Total Addressable Market (TAM)}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\normalsize \$4.20 Billion}} \\[1pt]
+      \tiny 14.0 Million US K--8 children enrolled annually in summer day camps.
+    \end{execbox}
+
+    \vskip2pt
+    \begin{execbox}{blueLight}{brandBlue}
+      \textcolor{brandBlue}{\textbf{\tiny Serviceable Addressable Market (SAM)}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\normalsize \$1.12 Billion}} \\[1pt]
+      \tiny Top 50 metropolitan suburban districts with median household income >\$120k.
+    \end{execbox}
+
+    \vskip2pt
+    \begin{execbox}{amberLight}{brandAmber}
+      \textcolor{brandAmber}{\textbf{\tiny 5-Year Serviceable Obtainable Market (SOM)}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\normalsize \$48.0 Million}} \\[1pt]
+      \tiny 100 partner campuses across 4 core metropolitan regions at 80\% capacity.
+    \end{execbox}
   \end{column}
 
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}[title=\textcolor{cnNavy}{\textbf{\footnotesize Structural Demand Tailwinds}}]{white}
-      \scriptsize
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandNavy}{\textbf{\scriptsize Key Demographic Demand Drivers}} \\[2pt]
+      \tiny
       \begin{itemize}
-        \item \textbf{Dual-Earner Households (68\%):} Summer childcare is an essential non-discretionary utility for working families, not an optional luxury.
-        \item \textbf{Post-Pandemic Social Development:} 84\% of parents prioritize in-person collaboration, physical activity, and social resilience over digital tutoring.
-        \item \textbf{Proximity Dictates Conversion:} 76\% of parents choose camps located within a 12-minute commute radius from their home or primary office route.
-        \item \textbf{School District Budget Pressures:} Public schools facing expiration of federal pandemic relief funds actively seek non-tax auxiliary revenue.
+        \item \textbf{68\% Dual-Earner Families:} Summer childcare is an essential non-discretionary utility for working parents, not a luxury.
+        \vskip2pt
+        \item \textbf{12-Minute Commute Rule:} 76\% of parent booking decisions are dictated strictly by neighborhood school proximity.
+        \vskip2pt
+        \item \textbf{District Revenue Squeeze:} Public schools face expiring federal subsidies and actively seek non-tax auxiliary income.
+        \vskip2pt
+        \item \textbf{Experiential Learning Shift:} 84\% of parents prioritize in-person athletics and STEM collaboration over passive screen time.
       \end{itemize}
-    \end{metricbox}
+    \end{execbox}
   \end{column}
 \end{columns}
 
 \end{frame}
 
 % ==============================================================================
-% SLIDE 5: Multi-Track Curriculum Architecture
+% SLIDE 5: Curricula Architecture
 % ==============================================================================
-\begin{frame}{Curriculum Architecture \& Program Delivery}{STANDARDIZED, REPRODUCIBLE 5-DAY ROTATIONAL PEDAGOGY}
+\begin{frame}{Tri-Track Curricula Architecture}{STANDARDIZED 5-DAY ROTATIONAL PEDAGOGY $\bullet$ 1:8 SUPERVISION RATIO}
 
 \begin{columns}[T]
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textcolor{cnGreen}{\textbf{\scriptsize Multi-Sport (\$425/wk)}}]{cnLightGreen}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{mintLight}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\scriptsize Multi-Sport Academy}} \\[1pt]
+      \textbf{\tiny \$425 / week $\bullet$ Ages 6--14} \\[2pt]
       \tiny
-      \textbf{Target Ages:} 6--14 years \\
-      \textbf{Core Activities:}
       \begin{itemize}
-        \item USSF soccer ball mastery drills.
-        \item 3v3 basketball spacing \& passing.
-        \item Flag football \& agility courses.
-        \item Friday Campus Mini-Olympics tournament with medals and awards.
+        \item USSF soccer ball mastery drills
+        \item 3v3 basketball spacing \& screens
+        \item Flag football agility courses
+        \item Friday Campus Mini-Olympics
       \end{itemize}
-      \textbf{Staffing:} 1 Coach : 8 Campers.
-    \end{metricbox}
+      \vskip2pt
+      \textcolor{brandEmerald}{\textbf{\tiny Staffing: 1 Coach : 8 Campers}}
+    \end{execbox}
   \end{column}
 
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textcolor{cnAmber}{\textbf{\scriptsize Theater (\$460/wk)}}]{cnLightAmber}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{amberLight}{brandAmber}
+      \textcolor{brandAmber}{\textbf{\scriptsize Musical Theater}} \\[1pt]
+      \textbf{\tiny \$460 / week $\bullet$ Ages 7--14} \\[2pt]
       \tiny
-      \textbf{Target Ages:} 7--14 years \\
-      \textbf{Core Activities:}
       \begin{itemize}
-        \item Vocal projection, diction \& breath.
-        \item Improvisation comedy \& teamwork.
-        \item Blocking, choreography \& cues.
-        \item Friday Afternoon 45-minute live musical stage showcase with full audio and stage lighting.
+        \item Vocal projection \& breath control
+        \item Improv comedy \& team games
+        \item Choreography \& stage blocking
+        \item Friday Live 45-Min Showcase
       \end{itemize}
-      \textbf{Staffing:} 1 Theater Lead : 8 Campers.
-    \end{metricbox}
+      \vskip2pt
+      \textcolor{brandAmber}{\textbf{\tiny Staffing: 1 Lead : 8 Campers}}
+    \end{execbox}
   \end{column}
 
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textcolor{cnBlue}{\textbf{\scriptsize Robotics (\$495/wk)}}]{cnLightBlue}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{blueLight}{brandBlue}
+      \textcolor{brandBlue}{\textbf{\scriptsize Robotics \& STEM}} \\[1pt]
+      \textbf{\tiny \$495 / week $\bullet$ Ages 8--14} \\[2pt]
       \tiny
-      \textbf{Target Ages:} 8--14 years \\
-      \textbf{Core Activities:}
       \begin{itemize}
-        \item LEGO Spike mechanical gearboxes.
-        \item Micro:bit obstacle rovers.
-        \item Block-to-Python sensor coding.
-        \item Friday Autonomous Sumo Bot Tournament with engineering logbooks.
+        \item LEGO Spike mechanical gearboxes
+        \item Micro:bit obstacle rovers
+        \item Block-to-Python sensor coding
+        \item Friday Autonomous Sumo Arena
       \end{itemize}
-      \textbf{Staffing:} 1 STEM Lead : 8 Campers.
-    \end{metricbox}
+      \vskip2pt
+      \textcolor{brandBlue}{\textbf{\tiny Staffing: 1 Lead : 8 Campers}}
+    \end{execbox}
   \end{column}
 \end{columns}
 
 \vskip4pt
 \begin{center}
-  \textcolor{cnSlate}{\scriptsize \textbf{Standardized Operating Cadence:} 8:30 AM Arrival $\rightarrow$ Morning Rally $\rightarrow$ Track Core Module $\rightarrow$ Nut-Free Lunch $\rightarrow$ Cross-Discipline Elective $\rightarrow$ 3:30 PM Secure Dismissal.}
+  \textcolor{brandSlate}{\tiny \textbf{Daily Operational Rhythm:} 8:30 AM Arrival $\rightarrow$ Morning Rally $\rightarrow$ Track Core Drills $\rightarrow$ Lunch $\rightarrow$ Cross Elective $\rightarrow$ 3:30 PM Secure Dismissal.}
 \end{center}
+
 \end{frame}
 
 % ==============================================================================
-% SLIDE 6: Dual-Sided Platform Technology
+% SLIDE 6: Platform Technology
 % ==============================================================================
-\begin{frame}{Dual-Sided Software Architecture}{PROPRIETARY PLATFORM CONNECTING PARENTS, SCHOOLS, AND SITE DIRECTORS}
+\begin{frame}{Dual-Sided Software Platform}{NEXT.JS 14 CLOUD ARCHITECTURE CONNECTING PARENTS, SCHOOLS, AND DIRECTORS}
 
 \begin{columns}[T]
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textbf{\scriptsize 1. Parent Discovery Portal}]{white}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandEmerald}{\textbf{\scriptsize 1. Parent Discovery UX}} \\[2pt]
       \tiny
       \begin{itemize}
-        \item Interactive campus locator with real-time seat availability across 8 summer weeks.
-        \item Frictionless 3-step checkout with automatic 15\% sibling discount logic.
-        \item Digital COPPA medical waiver intake (allergies, EpiPen protocols, physician info).
-        \item Instant pass generation with rolling \textbf{4-digit dismissal PIN}.
+        \item Multi-campus live seat availability.
+        \item Automated 15\% sibling discount checkout.
+        \item Digital COPPA medical \& allergy intake.
+        \item Instant mobile pass with \textbf{4-digit PIN}.
       \end{itemize}
-    \end{metricbox}
+    \end{execbox}
   \end{column}
 
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textbf{\scriptsize 2. School Partner Hub}]{white}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandBlue}{\textbf{\scriptsize 2. School Partner Hub}} \\[2pt]
       \tiny
       \begin{itemize}
-        \item Auxiliary revenue calculator (\$35k--\$75k estimation based on rooms rented).
-        \item Facility calendar integration (gyms, theaters, STEM labs, restrooms).
-        \item Auto-generated Master Lease agreement and digital \$5M COI certificates.
-        \item Real-time district revenue share reconciliation ledger.
+        \item Auxiliary revenue simulator (\$35k--\$75k).
+        \item Digital facility space reservation calendar.
+        \item Auto-generated Master Lease with \$5M COI.
+        \item Real-time district royalty payment ledger.
       \end{itemize}
-    \end{metricbox}
+    \end{execbox}
   \end{column}
 
-  \begin{column}{0.32\textwidth}
-    \begin{metricbox}[title=\textbf{\scriptsize 3. Operations Command}]{white}
+  \begin{column}{0.31\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandAmber}{\textbf{\scriptsize 3. Operations Command}} \\[2pt]
       \tiny
       \begin{itemize}
-        \item Live digital muster sheet with 1-click check-in/out and PIN verification.
-        \item Real-time ACA ratio safety alerts (flags if ratio exceeds 1:8).
-        \item High-visibility medical badges for severe allergies (nut, dairy, bee sting).
-        \item Direct digital incident log with automated parent/director notification.
+        \item Live muster sheet with PIN verification.
+        \item Real-time \textbf{1:8 ratio safety monitor}.
+        \item High-visibility EpiPen and allergy flags.
+        \item Digital incident logger with parent alerts.
       \end{itemize}
-    \end{metricbox}
+    \end{execbox}
   \end{column}
 \end{columns}
 
-\vskip5pt
-\begin{metricbox}{cnLightGreen}
+\vskip4pt
+\begin{execbox}{mintLight}{brandEmerald}
   \scriptsize
-  \textbf{Next.js 14 Production Stack:} TypeScript domain typing, server-side static rendering, Tailwind CSS responsive layouts, and zero external dependency risk.
-\end{metricbox}
+  \textbf{Enterprise Tech Foundation:} Next.js 14 App Router, TypeScript type safety, Tailwind CSS responsive layouts, and zero heavy backend dependencies for ultra-fast mobile load speeds.
+\end{execbox}
+
 \end{frame}
 
 % ==============================================================================
-% SLIDE 7: Operations, Logistics & Trust Architecture
+% SLIDE 7: Operations & Safety
 % ==============================================================================
-\begin{frame}{Operations, Logistics \& Trust Architecture}{INSTITUTIONAL SAFETY, RAPID MOBILIZATION, AND RISK MITIGATION}
+\begin{frame}{Operations, Logistics \& Trust Architecture}{INSTITUTIONAL RIGOR $\bullet$ TWO-FACTOR DISMISSAL $\bullet$ 48-HOUR RAPID STAGING}
 
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
-    \textbf{\textcolor{cnGreen}{\small Turnkey "Camp-in-a-Box" Logistics}}
-    \begin{itemize}\scriptsize
-      \item \textbf{Modular Crate System:} Standardized weather-resistant flight cases pre-stocked with serialized inventory (soccer balls, micro:bits, stage mics).
-      \item \textbf{Rapid Staging:} Friday 4:00 PM campus intake $\rightarrow$ Monday 8:00 AM full operational readiness.
-      \item \textbf{Zero Residual Footprint:} Friday evening restorative custodial turnaround with EPA-registered disinfectants and photographic sign-off.
-    \end{itemize}
-
-    \vskip4pt
-    \textbf{\textcolor{cnBlue}{\small Commercial Risk Mitigation}}
-    \begin{itemize}\scriptsize
-      \item \textbf{\$5M General Liability Insurance:} Direct indemnification of host school districts.
-      \item \textbf{Emergency Response Protocols:} Heat illness mitigation, severe weather relocation to indoor gymnasiums.
-    \end{itemize}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandEmerald}{\textbf{\scriptsize Uncompromising Safety Standards}} \\[2pt]
+      \tiny
+      \begin{itemize}
+        \item \textbf{Guaranteed 1:8 Ratio:} Strictly surpasses the American Camp Association (ACA) 1:10 guideline.
+        \item \textbf{Two-Factor Camper Dismissal:} Children are released exclusively upon scanning the parent pass and verifying the 4-digit PIN against guardian ID.
+        \item \textbf{100\% Background Checks:} FBI LiveScan, Megan's Law screening, and mandatory CPR/AED certification.
+      \end{itemize}
+    \end{execbox}
   \end{column}
 
   \begin{column}{0.48\textwidth}
-    \textbf{\textcolor{cnAmber}{\small Trust \& Child Safety Guardrails}}
-    \begin{itemize}\scriptsize
-      \item \textbf{Strict 1:8 Counselor-to-Camper Ratio:} Exceeds standard state regulations and American Camp Association (ACA) 1:10 requirement.
-      \item \textbf{Vetted Staffing Pipeline:} 100\% of directors and counselors pass FBI LiveScan criminal background checks, Megan's Law verification, and mandatory CPR/AED certification.
-      \item \textbf{Two-Factor Dismissal System:} Campers are released exclusively upon scanning the parent boarding pass and verifying the rolling 4-digit PIN against guardian ID.
-    \end{itemize}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandNavy}{\textbf{\scriptsize Rapid Turnkey Logistics}} \\[2pt]
+      \tiny
+      \begin{itemize}
+        \item \textbf{48-Hour Staging:} Reusable flight crates arrive Friday 4:00 PM; campuses are fully active by Monday 8:00 AM.
+        \item \textbf{Zero Residual Wear:} Daily evening custodial turnaround using EPA-registered disinfectants.
+        \item \textbf{\$5M Insurance Policy:} Commercial General Liability naming host district as Additional Insured.
+      \end{itemize}
+    \end{execbox}
+  \end{column}
+\end{columns}
 
-    \vskip4pt
-    \begin{metricbox}{cnLightGreen}
-      \scriptsize \textbf{Safety Track Record Target:} Zero preventable injuries, 100\% custodial inspection compliance, and 99.4\% parent safety satisfaction score.
-    \end{metricbox}
+\vskip4pt
+\begin{columns}[T]
+  \begin{column}{0.24\textwidth}
+    \begin{execbox}{mintLight}{brandEmerald}
+      \centering
+      \textcolor{brandEmerald}{\textbf{\normalsize 1 : 8}} \\[1pt]
+      \tiny Staff-to-Camper Ratio
+    \end{execbox}
+  \end{column}
+  \begin{column}{0.24\textwidth}
+    \begin{execbox}{blueLight}{brandBlue}
+      \centering
+      \textcolor{brandBlue}{\textbf{\normalsize \$5M}} \\[1pt]
+      \tiny Liability Policy
+    \end{execbox}
+  \end{column}
+  \begin{column}{0.24\textwidth}
+    \begin{execbox}{amberLight}{brandAmber}
+      \centering
+      \textcolor{brandAmber}{\textbf{\normalsize 48 Hrs}} \\[1pt]
+      \tiny Staging Deployment
+    \end{execbox}
+  \end{column}
+  \begin{column}{0.24\textwidth}
+    \begin{execbox}{cardBg}{lineBorder}
+      \centering
+      \textcolor{brandNavy}{\textbf{\normalsize 0\%}} \\[1pt]
+      \tiny Campus Wear \& Tear
+    \end{execbox}
   \end{column}
 \end{columns}
 
 \end{frame}
 
 % ==============================================================================
-% SLIDE 8: Unit Economics & Campus-Level P&L
+% SLIDE 8: Unit Economics
 % ==============================================================================
-\begin{frame}{Unit Economics: Single Campus P\&L Model}{HIGH MARGINS, PREDICTABLE COSTS, AND RAPID CAPITAL PAYBACK}
+\begin{frame}{Single-Campus Unit Economics \& P\&L Model}{HIGH MARGINS, PREDICTABLE EXPENSES, AND PRE-FUNDED CASH FLOAT}
 
 \begin{columns}[T]
-  \begin{column}{0.58\textwidth}
+  \begin{column}{0.55\textwidth}
     \scriptsize
-    \textbf{Campus Parameters:} 8-Week Summer Season $\bullet$ 120 Campers/Week Average (80\% Capacity)
+    \textbf{Campus Metrics:} 8-Wk Season $\bullet$ 120 Campers/Wk Avg (80\% Capacity)
     \vskip2pt
     \begin{tabularx}{\textwidth}{Xr}
       \toprule
-      \textbf{Single Campus Financial Line Item} & \textbf{8-Week Total} \\
+      \textbf{Single Campus Line Item} & \textbf{8-Week Total} \\
       \midrule
-      \textbf{Gross Tuition Revenue} (960 camper-weeks @ \$460 avg) & \textbf{\$441,600} \\
+      \textbf{Gross Tuition Revenue} (960 camper-wks @ \$460) & \textbf{\$441,600} \\
       \midrule
-      \textit{Cost of Goods Sold \& Facility Expense:} & \\
-      $\quad$ School District Facility Royalty (15\% Master Lease) & (\$66,240) \\
-      $\quad$ Site Director Payroll (\$1,800/wk $\times$ 9 wks) & (\$16,200) \\
-      $\quad$ Counselor Payroll (15 staff @ \$800/wk $\times$ 8 wks) & (\$96,000) \\
-      $\quad$ Extended Care Staffing & (\$6,000) \\
+      $\quad$ School District Royalty (15\% Master Lease) & (\$66,240) \\
+      $\quad$ Campus Staff Payroll (1 Director + 15 Staff) & (\$118,200) \\
       $\quad$ Curriculum Kits \& Consumables (\$30/camper-wk) & (\$28,800) \\
-      $\quad$ Commercial Insurance (\$5M COI allocation) & (\$12,000) \\
-      $\quad$ Merchant Processing Fees (2.5\%) & (\$11,040) \\
-      $\quad$ Snacks, First Aid \& Camp T-Shirts & (\$7,560) \\
-      $\quad$ Local Field Marketing \& PTA Sponsorships & (\$20,000) \\
+      $\quad$ Insurance (\$5M COI), Merchant Fees, Snacks & (\$30,600) \\
+      $\quad$ Local Field Marketing \& PTA Sponsorships & (\$24,000) \\
       \midrule
-      \textbf{Net Campus Contribution Margin (EBITDA)} & \textbf{\$173,760} \\
+      \textbf{Net Campus EBITDA Contribution} & \textbf{\$173,760} \\
       \textbf{Campus EBITDA Margin} & \textbf{39.3\%} \\
       \bottomrule
     \end{tabularx}
   \end{column}
 
-  \begin{column}{0.40\textwidth}
-    \begin{metricbox}[title=\textcolor{cnNavy}{\textbf{\scriptsize Break-Even \& Efficiency}}]{white}
+  \begin{column}{0.42\textwidth}
+    \begin{execbox}{mintLight}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\tiny Break-Even Volume}} \\[1pt]
+      \textcolor{brandNavy}{\textbf{\normalsize 41 Campers / Week}} \\[1pt]
       \tiny
-      \textbf{Break-Even Formula:}
-      \[
-        N^* = \frac{\text{Fixed Weekly Overhead}}{\text{Tuition} - \text{Variable Cost}} = \mathbf{41\text{ campers/wk}}
-      \]
-      \begin{itemize}
-        \item Break-even achieved at just \textbf{34.2\%} of campus capacity.
-        \item All enrollment above 41 campers flows to EBITDA at a \textbf{68\% incremental contribution rate}.
-        \item \textbf{Pre-Funded Working Capital:} Parents pay tuition in March--May, providing 100\% cash-advance float for June staff payroll and kit purchases. Zero debt financing needed.
-      \end{itemize}
-    \end{metricbox}
+      Achieved at just \textbf{34.2\%} of campus capacity. Incremental enrollment yields a \textbf{68\% incremental margin}.
+    \end{execbox}
+
+    \vskip3pt
+    \begin{execbox}{blueLight}{brandBlue}
+      \textcolor{brandBlue}{\textbf{\tiny Pre-Funded Working Capital}} \\[1pt]
+      \tiny
+      Parents register and pay in March--May, generating 100\% upfront cash float to fund summer payroll without bank debt.
+    \end{execbox}
   \end{column}
 \end{columns}
 
 \end{frame}
 
 % ==============================================================================
-% SLIDE 9: Competitive Landscape & Defensive Moats
+% SLIDE 9: Competitive Matrix
 % ==============================================================================
-\begin{frame}{Competitive Matrix \& Strategic Moats}{WHY CAMPNEXUS WINS AGAINST INCUMBENTS AND SPECIALTY CAMPS}
+\begin{frame}{Competitive Landscape \& Strategic Moats}{WHY CAMPNEXUS WINS AGAINST INCUMBENTS AND SPECIALTY OPERATORS}
 
 \begin{table}[h]
 \centering
 \tiny
-\begin{tabularx}{\linewidth}{p{2.2cm}p{2.3cm}p{2.3cm}p{2.3cm}>{\columncolor{cnLightGreen}}p{2.5cm}}
+\begin{tabularx}{\textwidth}{p{2.0cm}p{2.2cm}p{2.2cm}p{2.2cm}>{\columncolor{mintLight}}p{2.6cm}}
 \toprule
 \textbf{Dimension} & \textbf{Camp Galileo} & \textbf{Steve \& Kate's} & \textbf{KidzToPros} & \textbf{CampNexus (Us)} \\
 \midrule
-\textbf{Curriculum Focus} & Maker / Design & Self-directed choice & Fragmented STEM & \textbf{Sports, Theater \& STEM} \\
-\textbf{Weekly Tuition} & \$550--\$650 & \$575--\$625 & \$450--\$525 & \textbf{\$425--\$495 (Value Leader)} \\
-\textbf{Real Estate Model} & Leased private sites & Rented schools & After-school vendor & \textbf{Master District Leaseback} \\
-\textbf{Sibling Friction} & High (Single track) & Medium & High (Multi-campus) & \textbf{Zero (All 3 tracks in 1)} \\
-\textbf{Staffing Ratio} & 1:10 & 1:12 & 1:12 & \textbf{1:8 Guaranteed Safety} \\
-\textbf{District Revenue} & Flat nominal fee & Standard fee & After-school split & \textbf{15\% Gross Auxiliary Share} \\
+\textbf{Curriculum} & Maker / Design & Unstructured choice & Fragmented STEM & \textbf{Sports, Theater \& STEM} \\
+\textbf{Weekly Rate} & \$550--\$650 & \$575--\$625 & \$450--\$525 & \textbf{\$425--\$495 (Value Leader)} \\
+\textbf{Drop-Offs} & Multiple sites & Single site & Multiple sites & \textbf{1 Site (All Siblings)} \\
+\textbf{Ratio} & 1:10 & 1:12 & 1:12 & \textbf{1:8 Guaranteed Safety} \\
+\textbf{District Royalties} & Flat fee & Standard fee & After-school split & \textbf{15\% Gross Share (\$50k+)} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -500,154 +537,137 @@
 \vskip2pt
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}{cnLightBlue}
-      \tiny \textbf{Moat 1: Zero Fixed Real Estate Drag} \\
-      Incumbents with permanent physical leases bleed cash during the 9 school months. CampNexus carries \textbf{zero real estate overhead} outside active summer weeks.
-    \end{metricbox}
+    \begin{execbox}{cardBg}{brandBlue}
+      \textcolor{brandBlue}{\textbf{\tiny Moat 1: Zero Fixed Real Estate Drag}} \\[1pt]
+      \tiny Incumbents with commercial leases bleed cash during the school year. CampNexus incurs \textbf{\$0 rent} outside summer weeks.
+    \end{execbox}
   \end{column}
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}{cnLightAmber}
-      \tiny \textbf{Moat 2: School District Exclusivity} \\
-      Once a school district approves a multi-year master lease and earns \$50k+ in auxiliary revenue, high administrative switching costs lock out competitors.
-    \end{metricbox}
+    \begin{execbox}{cardBg}{brandAmber}
+      \textcolor{brandAmber}{\textbf{\tiny Moat 2: School District Exclusivity}} \\[1pt]
+      \tiny Once a district signs a master lease and earns \$50k+ in royalties, municipal switching costs effectively lock out competitors.
+    \end{execbox}
   \end{column}
 \end{columns}
+
 \end{frame}
 
 % ==============================================================================
-% SLIDE 10: Go-To-Market & Growth Flywheel
+% SLIDE 10: Go-To-Market
 % ==============================================================================
 \begin{frame}{Go-To-Market Strategy \& Growth Flywheel}{DUAL-CHANNEL PIPELINE: INSTITUTIONAL B2B AND HYPER-LOCAL B2C}
 
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
-    \textbf{\textcolor{cnNavy}{\small Phase 1: B2B School District Acquisition (Oct--Feb)}}
-    \begin{itemize}\scriptsize
-      \item \textbf{Target Archetype:} Suburban school districts and charter networks with modern gyms, auditoriums, and STEM labs.
-      \item \textbf{The Economic Pitch:} Turn empty buildings into \$35,000--\$75,000 in unrestricted funds + 10 full-tuition scholarships for district low-income students.
-      \item \textbf{Indemnification Guarantee:} Turnkey \$5M insurance, background-checked staff, and complete custodial coverage.
-    \end{itemize}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandNavy}{\textbf{\scriptsize Phase 1: B2B District Acquisition (Oct--Feb)}} \\[1pt]
+      \tiny Direct outreach to public school superintendents. Offering \$50k+ guaranteed auxiliary revenue, \$5M indemnification, and free district student equity scholarships.
+    \end{execbox}
 
-    \vskip3pt
-    \textbf{\textcolor{cnGreen}{\small Phase 2: B2C Parent Acquisition (Feb--May)}}
-    \begin{itemize}\scriptsize
-      \item \textbf{District Endorsement:} Official Peachjar digital distribution directly to enrolled student families.
-      \item \textbf{Grassroots PTA Co-Sponsorship:} 5\% rebate returned directly to the host school's Parent-Teacher Association.
-      \item \textbf{Early-Bird \& Sibling Referral Engine:} 15\% automatic second-child discount drives high multi-camper registration.
-    \end{itemize}
+    \vskip2pt
+    \begin{execbox}{mintLight}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\scriptsize Phase 2: B2C Parent Acquisition (Feb--May)}} \\[1pt]
+      \tiny Official digital flyer distribution via Peachjar to 2,000+ enrolled district families, direct PTA sponsorships with 5\% rebates, and 15\% sibling referrals.
+    \end{execbox}
   \end{column}
 
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}[title=\textcolor{cnGreen}{\textbf{\scriptsize The Compound Growth Flywheel}}]{cnLightGreen}
-      \centering
-      \small
-      \textbf{Institutional District Partnership} \\[1pt]
-      \textcolor{cnSlate}{\tiny $\Downarrow$ Official flyer distribution to 2,000+ local families} \\[1pt]
-      \textbf{High Local Camper Density} \\[1pt]
-      \textcolor{cnSlate}{\tiny $\Downarrow$ Organic parent word-of-mouth \& 15\% sibling bundle} \\[1pt]
-      \textbf{High Campus Profitability \& School Royalties} \\[1pt]
-      \textcolor{cnSlate}{\tiny $\Downarrow$ District board re-signs multi-year exclusive lease} \\[1pt]
-      \textbf{92\% District Renewal Rate \& Dropping CAC}
-    \end{metricbox}
+    \begin{execbox}{cardBg}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\scriptsize The Compound Growth Loop}} \\[2pt]
+      \tiny
+      \textbf{1. District Master Lease Signed} \\
+      $\quad\Downarrow$ Official district flyer distribution to 2,000+ families \\
+      \textbf{2. High Local Camper Density} \\
+      $\quad\Downarrow$ 15\% sibling referral engine \& parent word-of-mouth \\
+      \textbf{3. \$50k+ Royalties Paid to School} \\
+      $\quad\Downarrow$ District board re-signs multi-year exclusive lease \\
+      \textbf{4. 92\% District Renewal Rate \& Dropping CAC}
+    \end{execbox}
 
-    \vskip3pt
-    \scriptsize \textbf{Customer Acquisition Cost (CAC) Trajectory:} \\
-    Year 1 CAC: \textbf{\$85/camper} $\rightarrow$ Year 2 CAC: \textbf{\$42/camper} $\rightarrow$ Year 3 CAC: \textbf{\$22/camper}.
+    \vskip2pt
+    \centering
+    \tiny \textbf{CAC Trajectory:} Year 1: \textbf{\$85} $\rightarrow$ Year 2: \textbf{\$42} $\rightarrow$ Year 3: \textbf{\$22 / camper}
   \end{column}
 \end{columns}
 
 \end{frame}
 
 % ==============================================================================
-% SLIDE 11: 3-Year Financial Projections & Scaling
+% SLIDE 11: 3-Year Financial Model
 % ==============================================================================
-\begin{frame}{3-Year Financial Model \& Milestones}{SCALING FROM 4 TO 45 CAMPUSES WITH ACCELERATING OPERATING LEVERAGE}
+\begin{frame}{3-Year Financial Projections \& Scaling Model}{EXPANDING FROM 4 TO 45 CAMPUSES WITH ACCELERATING OPERATING MARGINS}
 
 \begin{table}[h]
 \centering
-\scriptsize
+\tiny
 \begin{tabularx}{\textwidth}{Xrrr}
 \toprule
-\textbf{Consolidated Metric} & \textbf{Year 1 (4 Campuses)} & \textbf{Year 2 (16 Campuses)} & \textbf{Year 3 (45 Campuses)} \\
+\textbf{Consolidated Financial Metric} & \textbf{Year 1 (4 Campuses)} & \textbf{Year 2 (16 Campuses)} & \textbf{Year 3 (45 Campuses)} \\
 \midrule
 \textbf{Active Campuses} & 4 & 16 & 45 \\
 \textbf{Total Camper-Weeks} & 3,840 & 15,360 & 43,200 \\
-\textbf{Average Weekly Tuition} & \$460 & \$460 & \$460 \\
 \midrule
 \textbf{Gross Tuition Revenue} & \textbf{\$1,766,400} & \textbf{\$7,065,600} & \textbf{\$19,872,000} \\
 \midrule
-\textit{School District Royalties (15\%)} & (\$264,960) & (\$1,059,840) & (\$2,980,800) \\
-\textit{Site Staff Payroll (Directors \& Counselors)} & (\$472,800) & (\$1,891,200) & (\$5,319,000) \\
-\textit{Curriculum Kits, Gear \& Consumables} & (\$115,200) & (\$460,800) & (\$1,296,000) \\
-\textit{Insurance, Merchant Fees \& Direct Marketing} & (\$218,400) & (\$873,600) & (\$2,457,000) \\
+$\quad$ School District Royalties (15\%) & (\$264,960) & (\$1,059,840) & (\$2,980,800) \\
+$\quad$ Campus Staff Payroll & (\$472,800) & (\$1,891,200) & (\$5,319,000) \\
+$\quad$ Curriculum Kits \& Depreciation & (\$115,200) & (\$460,800) & (\$1,296,000) \\
+$\quad$ Insurance, Fees \& Direct Marketing & (\$218,400) & (\$873,600) & (\$2,457,000) \\
 \midrule
 \textbf{Campus Contribution Margin (EBITDA)} & \textbf{\$695,040} & \textbf{\$2,780,160} & \textbf{\$7,819,200} \\
-\textbf{Campus Contribution Margin \%} & \textbf{39.3\%} & \textbf{39.4\%} & \textbf{39.4\%} \\
+\textbf{Campus EBITDA Margin \%} & \textbf{39.3\%} & \textbf{39.4\%} & \textbf{39.4\%} \\
 \midrule
-\textit{Central HQ Overhead (Logistics, Eng, Legal)} & (\$320,000) & (\$750,000) & (\$1,800,000) \\
+$\quad$ Central HQ Overhead (Eng, Legal, Logistics) & (\$320,000) & (\$750,000) & (\$1,800,000) \\
 \midrule
 \textbf{Consolidated Net Operating Income} & \textbf{\$375,040} & \textbf{\$2,030,160} & \textbf{\$6,019,200} \\
-\textbf{Consolidated Net Margin \%} & \textbf{21.2\%} & \textbf{28.7\%} & \textbf{30.3\%} \\
+\textbf{Net Operating Margin \%} & \textbf{21.2\%} & \textbf{28.7\%} & \textbf{30.3\%} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \vskip2pt
-\begin{columns}[T]
-  \begin{column}{0.5\textwidth}
-    \tiny \textbf{Capital Efficiency:} Fully self-sustaining campus model after initial crate hardware purchase (\$18,000 per campus crate amortized across 3 seasons).
-  \end{column}
-  \begin{column}{0.5\textwidth}
-    \tiny \textbf{Growth Target:} Expansion across 4 primary metro clusters: Bay Area, Pacific Northwest, Texas Triangle, and Southern California.
-  \end{column}
-\end{columns}
+\begin{center}
+  \textcolor{brandSlate}{\tiny \textbf{Target Expansion Clusters:} San Francisco Bay Area $\bullet$ Seattle Metro $\bullet$ Austin/Dallas $\bullet$ Southern California $\bullet$ \$1.2M Seed Round.}
+\end{center}
+
 \end{frame}
 
 % ==============================================================================
-% SLIDE 12: Leadership, Teammate Workstreams & Execution Roadmap
+% SLIDE 12: Leadership, Workstreams & Deliverables
 % ==============================================================================
-\begin{frame}{Team Workstreams \& Immediate Execution Roadmap}{OPERATIONAL ROLES AND ONBOARDING ASSIGNMENTS FOR INCOMING TEAMMATES}
+\begin{frame}{Team Workstreams \& Essential Project Links}{ONBOARDING SPRINT ROLES FOR INCOMING TEAMMATES $\bullet$ ALL DELIVERABLES LIVE}
 
 \begin{columns}[T]
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}[title=\textcolor{cnNavy}{\textbf{\footnotesize Assigned Teammate Workstreams}}]{white}
+    \begin{execbox}{cardBg}{lineBorder}
+      \textcolor{brandNavy}{\textbf{\scriptsize Assigned Teammate Workstreams}} \\[2pt]
       \tiny
-      \textbf{Workstream 1: Technology \& Platform Engineering}
-      \begin{itemize}
-        \item Mobile boarding pass with automated SMS pickup alert integration.
-        \item Stripe billing integration with split-escrow district payouts.
-      \end{itemize}
-      \textbf{Workstream 2: District Partnerships \& Real Estate}
-      \begin{itemize}
-        \item Outreach pipeline to 40 target public school superintendents.
-        \item Master Lease contract standardization \& COI distribution.
-      \end{itemize}
-      \textbf{Workstream 3: Camp Operations \& Staff Recruitment}
-      \begin{itemize}
-        \item Hiring 60 collegiate athletes, educators, and STEM leads.
-        \item ACA 1:8 certification \& LiveScan fingerprinting rollout.
-      \end{itemize}
-    \end{metricbox}
+      \textbf{1. Technology \& Engineering:} \\
+      $\quad\bullet$ Mobile boarding pass QR scanner for directors \\
+      $\quad\bullet$ Twilio automated SMS pickup alert gateway \\
+      $\quad\bullet$ Stripe Connect split-escrow district payouts \\[2pt]
+      \textbf{2. District Partnerships \& Legal:} \\
+      $\quad\bullet$ Outreach pipeline across 40 superintendents \\
+      $\quad\bullet$ Master Lease contracts \& \$5M COI distributions \\[2pt]
+      \textbf{3. Camp Operations \& Staffing:} \\
+      $\quad\bullet$ Recruiting 60 collegiate coaches \& STEM leads \\
+      $\quad\bullet$ ACA 1:8 certification \& LiveScan fingerprinting
+    \end{execbox}
   \end{column}
 
   \begin{column}{0.48\textwidth}
-    \begin{metricbox}[title=\textcolor{cnGreen}{\textbf{\footnotesize Key Deliverables \& Repository Links}}]{cnLightGreen}
+    \begin{execbox}{mintLight}{brandEmerald}
+      \textcolor{brandEmerald}{\textbf{\scriptsize Key Deliverables Ready to Share}} \\[2pt]
       \tiny
       \textbf{1. Live Deployed Web Application:} \\
-      \textcolor{cnBlue}{\url{https://ricoz-innovation.vercel.app}} \\[3pt]
+      \url{https://ricoz-innovation.vercel.app} \\[3pt]
       \textbf{2. GitHub Source Code Repository:} \\
-      \textcolor{cnBlue}{\url{https://github.com/Siddarth021/ricoz-innovation.git}} \\[3pt]
-      \textbf{3. Downloadable 12-Page Business Deck (PDF):} \\
+      \url{https://github.com/Siddarth021/ricoz-innovation.git} \\[3pt]
+      \textbf{3. 12-Page Pitch Deck (PDF):} \\
       \texttt{/CampNexus\_12\_Page\_Business\_Deck.pdf} \\[3pt]
-      \textbf{4. Technical Report \& Formal PRD (8-Page PDF):} \\
+      \textbf{4. Technical PRD Report (8-Page PDF):} \\
       \texttt{/CampNexus\_PRD\_Technical\_Report.pdf}
-    \end{metricbox}
-
-    \vskip3pt
-    \begin{metricbox}{white}
-      \tiny \textbf{Immediate Onboarding Action for Teammates:}
-      Clone the GitHub repository, review the 12-page business deck, inspect the live Parent/School/Operations portals, and claim sprint items in Workstreams 1--3.
-    \end{metricbox}
+    \end{execbox}
   \end{column}
 \end{columns}
 
