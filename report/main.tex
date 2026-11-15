@@ -1,0 +1,319 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\begin{document}
+
+% -------------------------------------------------------------
+% Title Page (Follows exact style of overleaf_upload (1).pdf)
+% -------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+\vspace*{1.5cm}
+
+{\large Indian Institute of Information Technology, Sri City\par}
+\vspace{0.3cm}
+{\large Ricoz Innovation -- Internship Technical Assessment\par}
+
+\vspace{2.5cm}
+
+{\Huge \textbf{Pop-Up Summer Camp Operator}\par}
+\vspace{0.4cm}
+{\LARGE \textbf{End-to-End Operational Architecture, PRD, and Multi-Campus Feasibility Study}\par}
+
+\vspace{1.0cm}
+{\large Project Topic 86 -- K-12 Underutilized Asset Arbitrage \& Multi-Track Day Camps\par}
+
+\vspace{2.5cm}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Name} & \textbf{Roll number} & \textbf{Branch / Role} \\
+\midrule
+Gundeti Siddarth & S20240010080 & CSE / Candidate (Head of Technology) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vfill
+
+{\large Date of submission: November 15, 2026\par}
+\vspace*{1.0cm}
+\end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------
+% Section 1: Introduction & Strategic Opportunity
+% -------------------------------------------------------------
+\section{Introduction}
+
+\subsection{The K-12 Underutilized Asset Paradox}
+Public and private K-12 educational infrastructure represents one of the largest concentrations of underutilized physical capital in civil society. A modern suburban school campus---spanning 8 to 25 acres and featuring regulation turf athletic fields, air-conditioned gymnasiums, 300-to-500-seat theatrical auditoriums, and fiber-connected computer labs---carries a replacement asset value of \$15M to \$45M. Yet, for approximately ten consecutive weeks each summer (early June through mid-August), these facilities sit almost completely dark. Operational expenses, security baseline costs, and utility overhead continue to accrue, while the physical plant generates zero auxiliary revenue for the host district.
+
+Simultaneously, working parents face an annual summer childcare crisis. Dual-income households require reliable, structured, full-day enrichment (8:30 AM to 5:30 PM) for children aged 6--15. Existing camp offerings are polarized:
+\begin{enumerate}
+    \item \textbf{Single-discipline boutique camps} (e.g., pure competitive soccer or private coding academies) require separate drop-offs for siblings and demand exorbitant tuition (\$800--\$1,500/week) driven by real-estate carrying debt.
+    \item \textbf{Unstructured municipal recreation programs} offer low-cost care but lack rigorous skill building, modern STEM hardware, or performance-caliber theater instruction.
+    \item \textbf{Fragmented administrative logistics} leave parents navigating clunky paper health forms, uncertain pickup authorization protocols, and opaque daily communications.
+\end{enumerate}
+
+\subsection{The Proposed System: CampNexus}
+To capture this market inefficiency, we propose \textbf{CampNexus}, an asset-light, full-stack pop-up camp operating system. CampNexus partners with K-12 school districts via standardized facility-use master leases. Over an 8-week summer window, each campus is transformed into a high-density, multi-track day camp offering three simultaneous curricula:
+\begin{itemize}
+    \item \textbf{Track 1: Multi-Sport Athletic Academy} (Gymnasium, Turf Soccer Pitch, Outdoor Track)
+    \item \textbf{Track 2: Creative Arts \& Musical Theater Workshop} (Auditorium, Stage, Drama Studios)
+    \item \textbf{Track 3: Robotics, AI \& Applied STEM Labs} (School Computer Labs, Science Classrooms)
+\end{itemize}
+
+By eliminating permanent real estate debt, CampNexus delivers premium programming at an accessible price (\$425--\$495/week), pays host schools \$35,000--\$75,000 in net auxiliary revenue, and ensures institutional child safety through an integrated digital command center.
+
+% -------------------------------------------------------------
+% Section 2: Competitive Market Research & Teardown
+% -------------------------------------------------------------
+\section{Competitive Market Research \& Teardown}
+
+Prior to drafting technical specifications, we analyzed the leading commercial operators utilizing leased educational facilities or operating high-volume seasonal day camps.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{2.6cm} p{2.2cm} p{1.8cm} p{3.2cm} X}
+\toprule
+\textbf{Competitor} & \textbf{Model Type} & \textbf{Tuition} & \textbf{Curriculum Scope} & \textbf{Key Vulnerability} \\
+\midrule
+\textbf{Camp Galileo} & Leased schools & \$540--\$620 & STEAM design thinking projects & Rigid single-subject format; high certified-teacher payroll; no sports. \\
+\addlinespace
+\textbf{Steve \& Kate's} & Free-choice tenant & \$525/wk & Self-directed maker, cooking, sports & Lack of structured skill progression; parent churn as children mature. \\
+\addlinespace
+\textbf{KidzToPros} & Contracted district & \$395--\$475 & STEM, Sports, and Digital Arts & Rapid scaling caused kit shortages and high instructor turnover. \\
+\addlinespace
+\textbf{iD Tech} & University lab lease & \$999--\$1,499 & Pure coding, game dev, AI robotics & Luxury pricing locks out middle class; heavy university rental overhead. \\
+\addlinespace
+\textbf{CampNexus (Ours)} & Turnkey K-12 OS & \$425--\$495 & Multi-Sport, Musical Theater, Robotics & Standardized Camp-in-a-Box logistics \& automated ratio guardrails. \\
+\bottomrule
+\end{tabularx}
+\caption{Comprehensive competitor benchmarking and operational trade-offs.}
+\label{tab:competitors}
+\end{table}
+
+\subsection{Competitive Differentiation}
+\begin{enumerate}
+    \item \textbf{Sibling Synergy in One Location:} Unlike competitors that specialize exclusively in coding or sports, CampNexus enables parents with multiple children of differing interests to drop off all siblings at a single neighborhood school campus.
+    \item \textbf{Serialized ``Camp-in-a-Box'' Supply Chain:} Specialized hardware (LEGO Spike Prime sets, wireless stage audio consoles, match soccer balls) is packaged into modular, serialized flight trunks shipped directly to campus sites 72 hours before session opening.
+    \item \textbf{Automated Child Safety \& Dismissal Handshake:} Rather than paper sign-out binders, our operational portal enforces a cryptographically validated 4-digit guardian PIN protocol and real-time counselor-to-camper ratio monitors.
+\end{enumerate}
+
+% -------------------------------------------------------------
+% Section 3: Technical Product Requirements (PRD)
+% -------------------------------------------------------------
+\section{Technical Product Requirements (PRD)}
+
+\subsection{Target Personas}
+\begin{itemize}
+    \item \textbf{Parent / Guardian (Primary Consumer):} Seeks frictionless enrollment, sibling discounts, flexible early/late care (7:30 AM--6:00 PM), and digital peace of mind regarding medical allergies and emergency pickup.
+    \item \textbf{School District Business Officer (B2B Partner):} Demands zero administrative burden, absolute indemnity protection (\$5,000,000 commercial liability policy), professional custodial sanitation, and guaranteed auxiliary cash flow.
+    \item \textbf{Camp Site Director \& Coaches (Internal Operators):} Needs a high-velocity mobile tablet dashboard for morning check-in, real-time supervision ratio compliance, allergy alerts, and afternoon pickup PIN verification.
+\end{itemize}
+
+\subsection{Functional Specifications \& Priority Matrix}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{lll p{7.5cm}}
+\toprule
+\textbf{Module} & \textbf{Priority} & \textbf{Component} & \textbf{Functional Requirement} \\
+\midrule
+Registration & P0 & Campus Finder & Search by geographic radius, amenities, and available weeks. \\
+Registration & P0 & Sibling Discount & Dynamic 15\% deduction applied automatically to additional campers. \\
+Registration & P0 & Medical Intake & Mandatory declaration of allergies, EpiPens, asthma, and dietary needs. \\
+Safety & P0 & Pickup PIN Engine & 4-digit guardian release code validated at afternoon gate dismissal. \\
+Safety & P0 & Ratio Guard & Real-time calculation of active campers per counselor (Max 1:10). \\
+Operations & P1 & Incident Logger & Timestamped triage tracking with immediate automated parent SMS. \\
+Logistics & P1 & Box Dispatch & Serialized inventory tracking of hardware kits and consumable arts trunks. \\
+B2B Portal & P1 & Lease Generator & Algorithmic school revenue calculator and Master Lease execution. \\
+Economics & P2 & Margin Modeler & Parametric P\&L sensitivity simulation across multi-campus portfolios. \\
+\bottomrule
+\end{tabular}
+\caption{System feature requirements and release priority classifications.}
+\label{tab:prd_matrix}
+\end{table}
+
+% -------------------------------------------------------------
+% Section 4: Operational Curricula & Logistics
+% -------------------------------------------------------------
+\section{Curricula \& Camp-in-a-Box Logistics Engine}
+
+Each 5-day session runs Monday through Friday, 8:30 AM to 3:30 PM, with early drop-off starting at 7:30 AM and extended care concluding at 6:00 PM.
+
+\subsection{Track 1: Multi-Sport Athletic Academy}
+\begin{itemize}
+    \item \textbf{Facility Requirements:} Regulation grass/turf soccer field, air-conditioned gymnasium, shaded hydration station.
+    \item \textbf{Syllabus:} Monday: First-touch soccer clinic \& agility ladders; Tuesday: 3v3 basketball spacing \& pass-and-cut drills; Wednesday: Track sprint mechanics \& non-contact flag rugby; Thursday: Match tactical scrimmages; Friday: Grand Campus Olympic Games and medals ceremony.
+    \item \textbf{Hardware Trunk (MS-40):} 24 size-4/5 match soccer balls, 60 agility cones, pop-up goals, colored pinnies, digital stopwatches, trauma first aid kit.
+\end{itemize}
+
+\subsection{Track 2: Creative Arts \& Musical Theater Workshop}
+\begin{itemize}
+    \item \textbf{Facility Requirements:} School auditorium with proscenium stage, backstage dressing rooms, drama classroom.
+    \item \textbf{Syllabus:} Monday: Vocal projection, diaphragmatic breathing \& cold table reads; Tuesday: Spatial blocking \& improv comedy; Wednesday: Ensemble dance choreography; Thursday: Technical dress rehearsal with lighting cues; Friday: 2:30 PM Grand Family Gala Showcase in the 350-seat auditorium.
+    \item \textbf{Hardware Trunk (TH-20):} 8 wireless UHF head-worn microphones, stage monitor PA system, costume trunk, prop bin, gaffer tape, theatrical makeup kits.
+\end{itemize}
+
+\subsection{Track 3: Robotics, AI \& Applied STEM Labs}
+\begin{itemize}
+    \item \textbf{Facility Requirements:} Dedicated school computer lab with high-speed Wi-Fi, science lab tables with power drops.
+    \item \textbf{Syllabus:} Monday: Mechanical chassis building \& gear ratio multipliers; Tuesday: Ultrasonic obstacle detection \& feedback loops; Wednesday: Python logic syntax \& Micro:bit wireless radio telemetry; Thursday: Blind arena maze navigation challenge; Friday: Robotics Grand Prix Tournament and portfolio demonstration.
+    \item \textbf{Hardware Trunk (RB-15):} 20 LEGO Spike Prime sets, 30 BBC Micro:bit v2 boards, sensor daughterboards, spare continuous-rotation servo motors, competition vinyl arena mats.
+\end{itemize}
+
+% -------------------------------------------------------------
+% Section 5: Unit Economics \& Mathematical Modeling
+% -------------------------------------------------------------
+\section{Unit Economics \& Mathematical Modeling}
+
+The financial viability of the pop-up camp model hinges on converting idle fixed municipal assets into variable high-margin revenue streams.
+
+\subsection{Mathematical Formulation}
+Let $N$ denote the average weekly enrollment per campus, $P$ the average weekly tuition per camper, and $W$ the number of operating summer weeks (nominally $W = 8$). The gross weekly tuition revenue $R$ is defined as:
+\begin{equation}
+    R = N \cdot P
+\end{equation}
+
+Operating costs decompose into fixed facility overhead and variable camper/staff costs. Let $C_{\text{lease}}$ denote the weekly campus lease fee paid to the school, $C_{\text{dir}}$ the weekly site director salary, $w$ the hourly counselor wage (\$22/hr), $H = 40$ hours/week, and $r$ the counselor-to-camper ratio (nominally $r = 1/9$). The variable cost per camper includes consumable supplies $c_{\text{mat}} = \$32$ and merchant processing/liability fees $\alpha = 0.045$:
+\begin{equation}
+    C_{\text{total}}(N) = C_{\text{lease}} + C_{\text{dir}} + N \left( \frac{w \cdot H}{1/r} \right) + N \cdot c_{\text{mat}} + \alpha \cdot (N \cdot P)
+\end{equation}
+
+The break-even enrollment threshold $N^*$ for a single campus is derived by equating revenue to total costs ($R = C_{\text{total}}$):
+\begin{equation}
+    N^* = \frac{C_{\text{lease}} + C_{\text{dir}}}{P - \left( w \cdot H \cdot r + c_{\text{mat}} + \alpha P \right)}
+\end{equation}
+
+\subsection{Empirical Parameter Estimation}
+Substituting standard operating parameters: $P = \$450$, $C_{\text{lease}} = \$4,500$, $C_{\text{dir}} = \$1,400$, $w = \$22$, $H = 40$, $r = 1/9 \approx 0.111$, $c_{\text{mat}} = \$32$, and $\alpha = 0.045$:
+\begin{equation}
+    N^* = \frac{4500 + 1400}{450 - \left( 97.78 + 32.00 + 20.25 \right)} = \frac{5900}{300.00} \approx 40.7 \text{ campers/week}
+\end{equation}
+
+Thus, break-even is achieved at approximately \textbf{41 campers per week}, representing just \textbf{28\%} of the maximum physical capacity of an average elementary or middle school facility (145 campers).
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{lrrrr}
+\toprule
+\textbf{Metric} & \textbf{Break-Even} & \textbf{Conservative} & \textbf{Target Baseline} & \textbf{Capacity Ceiling} \\
+\midrule
+Weekly Campers ($N$) & 41 & 75 & 120 & 160 \\
+Weekly Tuition Revenue & \$18,450 & \$33,750 & \$54,000 & \$72,000 \\
+School Campus Lease & -\$4,500 & -\$4,500 & -\$4,500 & -\$4,500 \\
+Staff Counselor Payroll & -\$4,010 & -\$7,330 & -\$11,730 & -\$15,640 \\
+Site Leadership Salary & -\$1,400 & -\$1,400 & -\$1,400 & -\$1,400 \\
+Curriculum Supplies & -\$1,312 & -\$2,400 & -\$3,840 & -\$5,120 \\
+Merchant \& Insurance (4.5\%) & -\$830 & -\$1,518 & -\$2,430 & -\$3,240 \\
+\midrule
+\textbf{Weekly Net Contribution} & \textbf{+\$398} & \textbf{+\$16,602} & \textbf{+\$30,100} & \textbf{+\$42,100} \\
+\textbf{Operating Margin (\%)} & \textbf{2.1\%} & \textbf{49.2\%} & \textbf{55.7\%} & \textbf{58.5\%} \\
+\bottomrule
+\end{tabularx}
+\caption{Single-campus weekly financial performance across capacity utilization tiers.}
+\label{tab:financials}
+\end{table}
+
+Across an 8-week summer season, a single campus operating at target baseline (120 campers) generates \textbf{\$432,000 in gross revenue} and \textbf{\$240,800 in operating contribution}, while remitting \textbf{\$42,800 in guaranteed lease and custodial fees} to the host school.
+
+% -------------------------------------------------------------
+% Section 6: Software Architecture & Implementation
+% -------------------------------------------------------------
+\section{Implementation \& System Architecture}
+
+The software platform is implemented as a modern, unified web application architected to support concurrent multi-persona workflows:
+
+\subsection{Tech Stack}
+\begin{itemize}
+    \item \textbf{Framework:} Next.js 14 utilizing the modern App Router architecture.
+    \item \textbf{Language \& Type Safety:} TypeScript with strict type checking across all entities (campuses, tracks, enrollments, attendance logs, and staff rosters).
+    \item \textbf{Styling \& UI Components:} Tailwind CSS for responsive design, paired with Lucide React iconography.
+    \item \textbf{Deployment:} Edge-ready static and dynamic server rendering configured for Vercel deployment.
+\end{itemize}
+
+\subsection{Core Architectural Subsystems}
+\begin{enumerate}
+    \item \textbf{Parent Booking Portal:} Features interactive campus selection, track customizer, multi-week cart configuration, automated 15\% sibling discount computation, medical and allergy intake, and digital boarding pass generation.
+    \item \textbf{School Partner Hub:} An interactive B2B facility leasing calculator allowing district officials to model potential summer income, customize facility zone allocations, review indemnification terms, and generate master lease contracts.
+    \item \textbf{Daily Operations Command Center:} A high-velocity tablet dashboard for site directors featuring real-time roster search, 4-digit PIN dismissal verification, counselor-to-camper ratio guardrails, and real-time incident logging.
+    \item \textbf{Curriculum \& Supply Chain Hub:} Modular 5-day educational blueprints for all three tracks, alongside serialized tracking for seven pre-configured ``Camp-in-a-Box'' hardware trunks.
+    \item \textbf{Unit Economics Modeler:} An interactive parametric simulation engine enabling real-time stress testing of tuition rates, wage inflation, and multi-campus portfolio scaling.
+\end{enumerate}
+
+% -------------------------------------------------------------
+% Section 7: Limitations & Risk Management
+% -------------------------------------------------------------
+\section{Limitations \& Risk Management}
+
+\begin{itemize}
+    \item \textbf{Facility Maintenance \& Wear-and-Tear:} School administrators fear property damage. \textit{Mitigation:} CampNexus maintains a dedicated evening custodial shift, deposits a \$5,000 escrow bond per site, and conducts photographic pre- and post-occupancy facility audits.
+    \item \textbf{Seasonal Staff Turnover:} High summer turnover can jeopardize safety ratios. \textit{Mitigation:} We recruit credentialed district teachers for Site Director and lead instructor roles at competitive wages (\$30--\$35/hr), complemented by collegiate student-athlete counselors (\$20--\$24/hr).
+    \item \textbf{Severe Weather \& Heatwaves:} Extreme summer heat limits outdoor turf field activities. \textit{Mitigation:} Leased campuses require indoor air-conditioned gymnasiums as a mandatory contractual specification, allowing seamless schedule rotation during high-temperature advisories.
+\end{itemize}
+
+% -------------------------------------------------------------
+% Section 8: Conclusion & Rollout Roadmap
+% -------------------------------------------------------------
+\section{Conclusion \& Engineering Roadmap}
+
+The pop-up summer camp model presents an exceptional opportunity to unlock substantial economic value from underutilized K-12 physical infrastructure. By synthesizing multi-sport coaching, musical theater, and applied robotics into a single neighborhood hub, CampNexus solves critical childcare challenges for parents while providing public and private schools with non-tax auxiliary funding.
+
+\begin{itemize}
+    \item \textbf{Phase 1 (Pilot, Months 1--4):} Launch 4 pilot campuses in high-density suburban districts; validate the automated guardian PIN handshake; achieve break-even within 3 weeks of enrollment.
+    \item \textbf{Phase 2 (Regional Cluster, Months 5--12):} Scale to 20 campuses across three metropolitan markets; automate regional Camp-in-a-Box warehouse fulfillment; introduce native iOS/Android parent check-in apps.
+    \item \textbf{Phase 3 (Enterprise White-Label, Year 2):} License the CampNexus operating software directly to large municipal school districts seeking to operate in-house summer enrichment programs.
+\end{itemize}
+
+% -------------------------------------------------------------
+% References
+% -------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{aca2023}
+American Camp Association, \textit{ACA Camp Business Operations and Compensation Report}, Martinsville, IN, 2023.
+
+\bibitem{nces2022}
+National Center for Education Statistics, ``Condition of America's Public School Facilities,'' U.S. Department of Education, Washington, D.C., 2022.
+
+\bibitem{galileo2021}
+Galileo Learning, ``The Galileo Innovation Approach: Pedagogical Framework for Summer Enrichment on Leased School Campuses,'' Oakland, CA, 2021.
+
+\bibitem{edweek2020}
+M. Lieberman, ``Empty Classrooms in Summer: How Districts Leverage Facility Rentals for Auxiliary Revenue,'' \textit{Education Week}, vol. 40, no. 12, pp. 14--18, 2020.
+
+\bibitem{coppa1998}
+Federal Trade Commission, ``Children's Online Privacy Protection Act of 1998 (COPPA),'' 16 CFR Part 312, 1998.
+
+\end{thebibliography}
+
+\end{document}
