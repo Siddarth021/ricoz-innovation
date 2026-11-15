@@ -55,6 +55,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenL
           {/* Action buttons */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             <a 
+              href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSiddarth021%2Fricoz-innovation.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-1 px-2.5 py-1.5 text-xs font-semibold rounded-lg bg-white hover:bg-slate-100 text-slate-900 transition-all shadow-sm"
+              title="Deploy to Vercel in 1 click"
+            >
+              <svg className="h-3 w-3 fill-current" viewBox="0 0 24 24">
+                <path d="M24 22.525H0l12-21.05 12 21.05z"/>
+              </svg>
+              <span className="hidden sm:inline">Deploy to Vercel</span>
+            </a>
+
+            <a 
               href="/CampNexus_PRD_Technical_Report.pdf" 
               download
               className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md shadow-emerald-900/30"

@@ -110,9 +110,16 @@ To match the typography and rigorous structure of formal engineering reports (`o
 
 ---
 
-## 6. Local Development & Deployment
+## 6. Local Development & 1-Click Vercel Deployment
 
-### Quick Start:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSiddarth021%2Fricoz-innovation.git)
+
+### 1-Click Cloud Deployment:
+Click the badge above or navigate to:  
+👉 **[Deploy CampNexus on Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSiddarth021%2Fricoz-innovation.git)**  
+Vercel will clone the repository, run `npm install`, compile the Next.js static and dynamic assets via its global edge CDN, and issue a live production URL (e.g. `https://ricoz-innovation.vercel.app`).
+
+### Local Development:
 ```bash
 # Clone the repository
 git clone https://github.com/Siddarth021/ricoz-innovation.git
@@ -127,15 +134,6 @@ npm run dev
 # Build for production
 npm run build
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Vercel Deployment:
-This repository is pre-configured for zero-configuration deployment to [Vercel](https://vercel.com):
-1. Import repository `https://github.com/Siddarth021/ricoz-innovation.git` into Vercel.
-2. Select Framework Preset: **Next.js**.
-3. Click **Deploy**.
-All static routes, assets, and compiled PDF downloads are served directly via Vercel Edge Network.
 
 ---
 
