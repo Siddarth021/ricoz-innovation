@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
   return (
     <header className="sticky top-0 z-50 bg-[#FAF8F5]/95 border-b border-[#E7E2DA] text-[#1C1917] shadow-sm backdrop-blur-md">
       {/* Top Utility Bar */}
-      <div className="bg-[#1C1917] text-[#E7E2DA] text-[11px] py-1.5 px-4 text-center tracking-widest uppercase">
+      <div className="bg-[#064E3B] text-emerald-100 text-[11px] py-1.5 px-4 text-center tracking-widest uppercase font-semibold">
         <span>Summer 2026 Campus Registration Open &bull; 15% Sibling Discount Automatically Applied</span>
       </div>
 
@@ -32,14 +32,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           
           {/* Left: Brand Identity */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab('home')}>
-            <div className="h-10 w-10 rounded-sm bg-[#1C1917] flex items-center justify-center text-white font-serif font-bold text-lg shadow-sm">
+            <div className="h-10 w-10 rounded-sm bg-emerald-600 flex items-center justify-center text-white font-serif font-bold text-lg shadow-sm">
               C
             </div>
             <div>
               <span className="font-serif text-2xl font-bold tracking-tight text-[#1C1917] block leading-none">
                 CAMPNEXUS
               </span>
-              <span className="text-[10px] tracking-[0.2em] uppercase text-[#78716C] font-semibold block mt-1">
+              <span className="text-[10px] tracking-[0.2em] uppercase text-emerald-700 font-bold block mt-1">
                 K-12 Campus Operator
               </span>
             </div>
