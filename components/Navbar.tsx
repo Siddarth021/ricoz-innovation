@@ -9,7 +9,8 @@ import {
   TrendingUp, 
   FileText, 
   Layers,
-  PhoneCall
+  PhoneCall,
+  Download
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -50,12 +51,23 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             </div>
           </div>
 
-          {/* Quick Contact & Action */}
-          <div className="flex items-center space-x-3">
-            <div className="hidden md:flex items-center space-x-1.5 text-xs text-slate-300 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+          {/* Quick Actions */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="hidden lg:flex items-center space-x-1.5 text-xs text-slate-300 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
               <PhoneCall className="h-3.5 w-3.5 text-emerald-400" />
-              <span>Campus Hotline: <strong>(800) 582-CAMP</strong></span>
+              <span>Hotline: <strong>(800) 582-CAMP</strong></span>
             </div>
+
+            <a
+              href="/CampNexus_PRD_Technical_Report.pdf"
+              download
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all"
+              title="Download Technical PRD & Architecture Report (PDF)"
+            >
+              <Download className="h-3.5 w-3.5 text-emerald-400" />
+              <span className="hidden sm:inline">Technical Report (PDF)</span>
+              <span className="sm:hidden">PDF</span>
+            </a>
 
             <button
               onClick={() => setActiveTab('parent')}

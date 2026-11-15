@@ -58,7 +58,14 @@ Modern school campuses represent millions in capital investment with athletic fi
 
 ---
 
-## 4. Tech Stack
+## 4. Documentation & Technical PRD Report
+
+- **Technical Report (PDF):** An in-depth 8-page operational architecture and mathematical feasibility study is compiled and available at `public/CampNexus_PRD_Technical_Report.pdf` (and inside `report/main.pdf`).
+- **LaTeX Source Code:** Complete LaTeX document source is preserved at `report/main.tex` and zipped at `public/CampNexus_Overleaf_LaTeX_Project.zip` for instant recompilation on Overleaf or local TeX engines.
+
+---
+
+## 5. Tech Stack
 
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
@@ -68,7 +75,7 @@ Modern school campuses represent millions in capital investment with athletic fi
 
 ---
 
-## 5. Getting Started
+## 6. Getting Started
 
 ### Prerequisites
 - Node.js 18.17+ or 20+
@@ -94,5 +101,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 6. License
+## 7. License
 Proprietary and confidential. Developed for CampNexus Platform.

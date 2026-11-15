@@ -31,9 +31,14 @@ export const PRDViewer: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="text-xs font-mono bg-emerald-950 text-emerald-300 border border-emerald-800 px-3 py-1.5 rounded-lg">
-              Status: Production Ready
-            </span>
+            <a
+              href="/CampNexus_PRD_Technical_Report.pdf"
+              download
+              className="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-900/30 flex items-center space-x-1.5 transition-all"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              <span>Download Technical Report (PDF)</span>
+            </a>
           </div>
         </div>
 
