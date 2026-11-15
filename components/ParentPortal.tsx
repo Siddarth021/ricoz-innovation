@@ -123,32 +123,32 @@ export const ParentPortal: React.FC = () => {
   return (
     <div className="space-y-10 pb-16">
       {/* Hero Welcome Banner */}
-      <section className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-slate-800 p-8 sm:p-10 text-white shadow-2xl">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider mb-4">
-            <ShieldCheck className="h-4 w-4" />
-            <span>K-12 Campus Facilities &bull; 100% Vetted Operators</span>
+      <section className="relative rounded-sm overflow-hidden bg-[#1C1917] border border-[#292524] p-8 sm:p-10 text-white shadow-sm">
+        <div className="relative z-10 max-w-3xl space-y-2">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-sm bg-white/10 text-[#E7E2DA] border border-white/20 text-xs font-semibold uppercase tracking-wider mb-2">
+            <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+            <span>Vetted K-12 Campuses &bull; 100% Certified Staff</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Premium Summer Enrichment on Your Local School Grounds.
+          <h1 className="text-2xl sm:text-4xl font-serif tracking-tight text-white leading-tight font-normal uppercase">
+            Official Summer 2026 Camper Enrollment
           </h1>
-          <p className="mt-3 text-base text-slate-300 leading-relaxed">
-            By leasing underutilized school auditoriums, athletic fields, and STEM labs, CampNexus delivers 
-            world-class multi-sport coaching, musical theater productions, and robotics academies right in your neighborhood.
+          <p className="text-xs sm:text-sm text-[#D6CEBE] leading-relaxed">
+            Reserve your child’s seat for Multi-Sport, Theater, or Robotics day camps. 
+            Small group supervision, full air conditioning, and convenient neighborhood drop-off.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4 text-xs text-slate-300">
-            <div className="flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+          <div className="pt-3 flex flex-wrap gap-3 text-xs text-[#A8A29E]">
+            <span className="flex items-center space-x-1.5">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
               <span>1:8 Staff-to-Camper Ratio</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>Secure 4-Digit Pickup PIN Release</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>Full Air-Conditioned Campuses</span>
-            </div>
+            </span>
+            <span className="flex items-center space-x-1.5">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+              <span>4-Digit Security PIN Release</span>
+            </span>
+            <span className="flex items-center space-x-1.5">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+              <span>15% Sibling Discount</span>
+            </span>
           </div>
         </div>
       </section>

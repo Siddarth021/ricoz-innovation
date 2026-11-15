@@ -45,19 +45,19 @@ export const SchoolPartnerPortal: React.FC = () => {
   return (
     <div className="space-y-10 pb-16">
       {/* School Partner Hero */}
-      <section className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 p-8 sm:p-10 text-white shadow-xl">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Building2 className="h-4 w-4" />
+      <section className="relative rounded-sm overflow-hidden bg-[#1C1917] border border-[#292524] p-8 sm:p-10 text-white shadow-sm">
+        <div className="max-w-3xl space-y-3">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-sm bg-white/10 text-[#E7E2DA] border border-white/20 text-xs font-semibold uppercase tracking-wider mb-1">
+            <Building2 className="h-3.5 w-3.5 text-emerald-400" />
             <span>K-12 Facility Monetization &bull; Zero Operational Overhead</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Turn Dark Summer Campuses into $35,000–$75,000 in Auxiliary Revenue.
+          <h1 className="text-2xl sm:text-4xl font-serif tracking-tight text-white leading-tight font-normal uppercase">
+            Turn Summer Campus Downtime into $35,000–$75,000 in Auxiliary Revenue.
           </h1>
-          <p className="mt-3 text-base text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#D6CEBE] leading-relaxed">
             School campuses sit empty for 70 consecutive summer days while HVAC, maintenance, and facility overhead costs continue. 
-            CampNexus operates as a turnkey master tenant: we provide all insurance ($5M policy), background-checked staff, 
-            daily custodial staffing, and high-quality STEM, theater, and sports camps for your student families.
+            CampNexus operates as a turnkey master tenant: we provide all insurance ($5,000,000 policy), background-checked staff, 
+            daily evening custodial sanitation, and high-quality STEM, theater, and sports camps for your student families.
           </p>
         </div>
       </section>
@@ -226,43 +226,43 @@ export const SchoolPartnerPortal: React.FC = () => {
         {/* Right 5 Columns: Revenue Summary & Proposal Agreement Generator */}
         <div className="lg:col-span-5 space-y-6">
           {/* Revenue Calculation Card */}
-          <div className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-xl border border-slate-800 p-6 shadow-lg">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+          <div className="bg-[#1C1917] text-white rounded-sm border border-[#292524] p-6 shadow-sm">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#E7E2DA]">
               Estimated Summer Earnings
             </span>
             <div className="mt-2 flex items-baseline justify-between">
-              <span className="text-3xl sm:text-4xl font-black text-white">
+              <span className="font-serif text-3xl sm:text-4xl font-bold text-white">
                 ${totalSummerPayout.toLocaleString()}
               </span>
-              <span className="text-xs text-slate-400">Net to School Fund</span>
+              <span className="text-xs text-[#A8A29E]">Net to School Fund</span>
             </div>
 
-            <div className="mt-6 space-y-2.5 pt-4 border-t border-slate-800 text-xs">
-              <div className="flex justify-between text-slate-300">
+            <div className="mt-6 space-y-2.5 pt-4 border-t border-[#292524] text-xs">
+              <div className="flex justify-between text-[#D6CEBE]">
                 <span>Direct Space Rental ({numWeeks} wks):</span>
                 <span className="font-mono text-white">${(weeklyGrossLease * numWeeks).toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-slate-300">
+              <div className="flex justify-between text-[#D6CEBE]">
                 <span>Dedicated Custodial Wage Stipend:</span>
                 <span className="font-mono text-white">${custodialStipend.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-emerald-400 font-semibold pt-1 border-t border-slate-800/80">
+              <div className="flex justify-between text-[#E7E2DA] font-semibold pt-1 border-t border-[#292524]">
                 <span>Donated Camper Scholarships:</span>
                 <span>{donatedScholarships} Full Seats (${(donatedScholarships * 450).toLocaleString()} Value)</span>
               </div>
             </div>
 
-            <div className="mt-6 p-3 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs flex items-center space-x-2">
-              <Award className="h-4 w-4 flex-shrink-0" />
-              <span>Funds can be earmarked directly for school robotics labs, athletics, or teacher bonuses.</span>
+            <div className="mt-6 p-3 rounded-sm bg-white/5 border border-white/10 text-[#D6CEBE] text-xs flex items-center space-x-2">
+              <Award className="h-4 w-4 flex-shrink-0 text-amber-400" />
+              <span>Funds can be earmarked directly for school robotics labs, athletics, or teacher stipends.</span>
             </div>
           </div>
 
           {/* Master Lease Agreement Generator */}
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+          <div className="bg-white rounded-sm border border-[#E7E2DA] p-6 shadow-sm">
             <div className="flex items-center space-x-2 mb-4">
-              <FileText className="h-5 w-5 text-emerald-600" />
-              <h3 className="text-sm font-bold text-slate-900">Generate Master Facility Agreement</h3>
+              <FileText className="h-5 w-5 text-[#1C1917]" />
+              <h3 className="font-serif text-sm font-bold uppercase tracking-wider text-[#1C1917]">Generate Master Facility Agreement</h3>
             </div>
 
             <div className="space-y-3 text-xs">
@@ -272,7 +272,7 @@ export const SchoolPartnerPortal: React.FC = () => {
                   type="text"
                   value={schoolName}
                   onChange={(e) => setSchoolName(e.target.value)}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-xs"
+                  className="w-full px-3 py-1.5 border border-[#E7E2DA] rounded-sm text-xs"
                 />
               </div>
 
@@ -282,7 +282,7 @@ export const SchoolPartnerPortal: React.FC = () => {
                   type="text"
                   value={schoolDistrict}
                   onChange={(e) => setSchoolDistrict(e.target.value)}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-xs"
+                  className="w-full px-3 py-1.5 border border-[#E7E2DA] rounded-sm text-xs"
                 />
               </div>
 
@@ -292,13 +292,13 @@ export const SchoolPartnerPortal: React.FC = () => {
                   type="text"
                   value={contactName}
                   onChange={(e) => setContactName(e.target.value)}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-xs"
+                  className="w-full px-3 py-1.5 border border-[#E7E2DA] rounded-sm text-xs"
                 />
               </div>
 
               <button
                 onClick={() => setIsAgreementGenerated(true)}
-                className="w-full mt-3 py-2.5 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md shadow-emerald-700/20 transition-all flex items-center justify-center space-x-2"
+                className="w-full mt-3 py-2.5 px-4 rounded-sm bg-[#1C1917] hover:bg-[#292524] text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center space-x-2"
               >
                 <FileText className="h-4 w-4" />
                 <span>Compile Official Master Lease Proposal</span>

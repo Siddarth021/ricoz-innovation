@@ -9,6 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        cream: {
+          50: '#FAF8F5',
+          100: '#F4EFEA',
+          200: '#EAE2D8',
+          300: '#DFD5C5',
+          400: '#D0C2AC',
+        },
+        editorial: {
+          dark: '#1C1917',
+          charcoal: '#292524',
+          muted: '#78716C',
+          border: '#E7E2DA',
+          card: '#FFFFFF',
+          accent: '#2D5A27',
+          gold: '#9A7B4F',
+        },
         brand: {
           50: '#f0fdf4',
           100: '#dcfce7',
@@ -20,21 +36,11 @@ const config: Config = {
           700: '#15803d',
           800: '#166534',
           900: '#14532d',
-          950: '#052e16',
-        },
-        navy: {
-          800: '#0f172a',
-          900: '#0b1120',
-          950: '#020617',
-        },
-        amber: {
-          accent: '#f59e0b',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-latin-modern)', 'Computer Modern', 'Georgia', 'serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'serif'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
       },
     },
   },
